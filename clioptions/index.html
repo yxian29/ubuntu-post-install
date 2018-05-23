@@ -435,6 +435,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#skip-version-checks" title="Skip Version Checks" class="md-nav__link">
+    Skip Version Checks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#fix-for-latest-ubuntu-releases" title="Fix for latest Ubuntu releases" class="md-nav__link">
     Fix for latest Ubuntu releases
   </a>
@@ -606,6 +613,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#skip-version-checks" title="Skip Version Checks" class="md-nav__link">
+    Skip Version Checks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#fix-for-latest-ubuntu-releases" title="Fix for latest Ubuntu releases" class="md-nav__link">
     Fix for latest Ubuntu releases
   </a>
@@ -692,7 +706,8 @@ OR
 <li>In case of DEB package files, they <strong>will</strong> be downloaded unlike apt-get package installs.</li>
 </ul>
 <details class="bug"><summary>Exceptions</summary><ul><li><strong>Simulate flag will not simulate or honor adding Repositories or PPAs.</strong></li><li>If you want to revert the changes please use <strong>Reset Repositories</strong> option.</li><li>PPAs and repositories will be added regardless of the flag.</li><li>Python package installation cannot be simulated. (pip lacks support for it) The script will skip installing apt dependencies and python packages, if simulate option is used.
-  it simulate option is used.</li><li>APT package upgrades and apt repository metadata updates cannot be simulated. Only a list of packages upgrade-able will be listed in the log file in case of upgrades.</li></ul></details><div class="admonition snippet">
+  it simulate option is used.</li><li>APT package upgrades and apt repository metadata updates cannot be simulated. Only a list of packages upgrade-able will be listed in the log file in case of upgrades.</li><li>Simulate flag will not simulate installing dependencies for adding or deleting repositories and PPAs.</li></ul></details><h2 id="skip-version-checks">Skip Version Checks<a class="headerlink" href="#skip-version-checks" title="Permanent link">&para;</a></h2>
+<div class="admonition snippet">
 <p class="admonition-title">Usage</p>
 <div class="codehilite"><pre><span></span>./after-effects --no-version-check
 </pre></div>

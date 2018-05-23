@@ -1,3 +1,3 @@
-SRC Commit ID  : 515b1f4
-SRC Message    : remove file from template
-Built from     : version_checks_api
+SRC Commit ID  : 148e23a
+SRC Message    : fail on error on trusty tests
+Built from     : master

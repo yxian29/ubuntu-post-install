@@ -1,3 +1,3 @@
-SRC Commit ID  : fa9acce
-SRC Message    :fix missing file, hush wget
+SRC Commit ID  : df4a458
+SRC Message    : update help msg
 Built from     : version_checks_api

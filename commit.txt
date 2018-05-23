@@ -1,3 +1,3 @@
-SRC Commit ID  : df4a458
-SRC Message    : update help msg
+SRC Commit ID  : 3e6ed59
+SRC Message    : use rsync
 Built from     : version_checks_api

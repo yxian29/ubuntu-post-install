@@ -692,7 +692,14 @@ OR
 <li>In case of DEB package files, they <strong>will</strong> be downloaded unlike apt-get package installs.</li>
 </ul>
 <details class="bug"><summary>Exceptions</summary><ul><li><strong>Simulate flag will not simulate or honor adding Repositories or PPAs.</strong></li><li>If you want to revert the changes please use <strong>Reset Repositories</strong> option.</li><li>PPAs and repositories will be added regardless of the flag.</li><li>Python package installation cannot be simulated. (pip lacks support for it) The script will skip installing apt dependencies and python packages, if simulate option is used.
-  it simulate option is used.</li><li>APT package upgrades and apt repository metadata updates cannot be simulated. Only a list of packages upgrade-able will be listed in the log file in case of upgrades.</li></ul></details><h2 id="fix-for-latest-ubuntu-releases">Fix for latest Ubuntu releases<a class="headerlink" href="#fix-for-latest-ubuntu-releases" title="Permanent link">&para;</a></h2>
+  it simulate option is used.</li><li>APT package upgrades and apt repository metadata updates cannot be simulated. Only a list of packages upgrade-able will be listed in the log file in case of upgrades.</li></ul></details><div class="admonition snippet">
+<p class="admonition-title">Usage</p>
+<div class="codehilite"><pre><span></span>./after-effects --no-version-check
+</pre></div>
+
+</div>
+<p>Script will warn you and exit if you are not running latest version of the script. You can skip that by using the above option.</p>
+<h2 id="fix-for-latest-ubuntu-releases">Fix for latest Ubuntu releases<a class="headerlink" href="#fix-for-latest-ubuntu-releases" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>
 <p><div class="codehilite"><pre><span></span>./after-effects -f
@@ -804,6 +811,10 @@ For post task hooks
 <li>Flags used,</li>
 <li>Timezone and system language.</li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Disabling stat reporting will also disable remote config.</p>
+</div>
 <details class="question"><summary>Privacy Concerns?</summary><ul><li>If you are freaking out, its a shell script !! You can literally look into it and check what's collected. Why if you ask? I mostly use it on a bunch of machines and would like to keep an eye on how it did.</li><li>Data will be stored in AWS DynamoDB and Google Firebase Real-time Database.
 Data will not be shared with any third party. Period. Only me or my team members will have access
 to it. If you run a search query on google, it probably collects more data than me. API endpoints may log your IP addresses. (Github, Google and AWS).</li><li>If you flood the reporting endpoints, you might get HTTP 429 errors as reporting endpoints have rate limits. Script will exit with code 29.</li></ul></details>

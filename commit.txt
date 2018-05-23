@@ -1,3 +1,3 @@
-SRC Commit ID  : 148e23a
-SRC Message    : fail on error on trusty tests
+SRC Commit ID  : 42a6c5e
+SRC Message    : march versio number with api
 Built from     : master

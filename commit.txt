@@ -1,3 +1,5 @@
-SRC Commit ID  : 6bb5c4a
-SRC Message    : dont use error if pip is not installed
+SRC Commit ID  : 61d8b77
+SRC Message    : Merge pull request #9 from tprasadtp/tprasadtp-patch-issue-templates
+
+Update issue templates
 Built from     : master

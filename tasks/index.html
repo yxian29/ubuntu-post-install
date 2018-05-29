@@ -474,8 +474,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-debian-package-package-archives-deb-files" title="Install debian package package archives (.deb files)" class="md-nav__link">
-    Install debian package package archives (.deb files)
+  <a href="#install-debian-package-archives-deb-files" title="Install Debian package archives (.deb files)" class="md-nav__link">
+    Install Debian package archives (.deb files)
   </a>
   
 </li>
@@ -693,8 +693,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-debian-package-package-archives-deb-files" title="Install debian package package archives (.deb files)" class="md-nav__link">
-    Install debian package package archives (.deb files)
+  <a href="#install-debian-package-archives-deb-files" title="Install Debian package archives (.deb files)" class="md-nav__link">
+    Install Debian package archives (.deb files)
   </a>
   
 </li>
@@ -819,10 +819,10 @@
 <p class="admonition-title">Your own Remote config</p>
 <p>You can use your own remote config file. You need following to do so.
 - A Valid configuration file accessible over http/https/ftp without login.
-- You can copy the files in api directory of this branch.
+- You can copy the files in cfg directory of this branch.
 - Host the files on your own server/S3/website &amp; Note the base url for that directory.
-- Use --api-endpoint protocol://{BASE_URL}/ while running the script.
-- Config files should be accessible over protocol://{BASEURL}/version</p>
+- Use --api-endpoint {protocol}://{BASE_URL} while running the script. (Note that there is no trailing slash)
+- Config files should be accessible over {protocol}://{BASEURL}/version</p>
 </div>
 <h3 id="canonical-partner-repositories">Canonical partner repositories<a class="headerlink" href="#canonical-partner-repositories" title="Permanent link">&para;</a></h3>
 <p>Following repositories are conditional and are determined based on the flags or conditions set.</p>
@@ -855,13 +855,22 @@
   <span class="nv">add_googlecloud_repo</span><span class="o">=</span><span class="nb">true</span>
 
   <span class="c1">#Signal</span>
-  <span class="nv">add_signal_repo</span><span class="o">=</span><span class="nb">true</span>
+  <span class="nv">add_signal_repo</span><span class="o">=</span><span class="nb">false</span>
 
   <span class="c1">#Skype</span>
   <span class="nv">add_skype_repo</span><span class="o">=</span><span class="nb">true</span>
 
   <span class="c1">#VS code</span>
   <span class="nv">add_vscode_repo</span><span class="o">=</span><span class="nb">true</span>
+
+  <span class="c1">#Google</span>
+  <span class="nv">add_google_repo</span><span class="o">=</span><span class="nb">true</span>
+
+  <span class="c1">#Kubernetes</span>
+  <span class="nv">add_kubernetes_repo</span><span class="o">=</span><span class="nb">false</span>
+
+  <span class="c1"># Define Data Directory</span>
+  <span class="nv">data_dir</span><span class="o">=</span><span class="s2">&quot;data&quot;</span>
 </pre></div>
 </details><div class="admonition bug">
 <p class="admonition-title">Note on 32 bit Architecture</p>
@@ -880,6 +889,7 @@
 <p class="admonition-title">Warning</p>
 <ul>
 <li>PPAs should be checked before they are added to the list. Sometimes PPAs listed in the file may not be available for all releases.</li>
+<li>Debian does not support PPAs.</li>
 </ul>
 </div>
 <h2 id="install-apt-packages">Install apt packages<a class="headerlink" href="#install-apt-packages" title="Permanent link">&para;</a></h2>
@@ -895,22 +905,22 @@
 <li>It is a good idea to include packages from external repositories in a different list than others because they might fail sometimes.</li>
 <li>Make sure that all the packages in the lists are available for your release. Using <code>-s</code> command line option helps. Also check for the logs for any errors or conflicts.</li>
 </ul>
-<h2 id="install-debian-package-package-archives-deb-files">Install debian package package archives (.deb files)<a class="headerlink" href="#install-debian-package-package-archives-deb-files" title="Permanent link">&para;</a></h2>
+<h2 id="install-debian-package-archives-deb-files">Install Debian package archives (.deb files)<a class="headerlink" href="#install-debian-package-archives-deb-files" title="Permanent link">&para;</a></h2>
 <p>This will install deb files specified in the list deb-files.list</p>
 <ul>
 <li>Logs will  show entry in the format <code>[&lt;date and time&gt;] [  PKG  ] &lt;log&gt;</code> for dpkg actions and</li>
 <li>APT Logs will  show entry in the format <code>[&lt;date and time&gt;] [  APT  ] &lt;log&gt;</code> for actions performed by apt commands. (<code>apt-get install -f</code> for missing packages)</li>
 <li><strong>Simulate</strong> option will use <code>--dry-run</code> option in dpkg to Simulate DEB installation.</li>
-<li>Configuration file is similar to that of PPA and package lists, but with one difference.</li>
+<li>Configuration file is a <code>csv</code> file without headers. first column corresponds to URL ans the seconf field the file name under which the file is saved.</li>
 <li>Each DEB file to be installed should have following entry.</li>
 <li>URL to the deb file which can be accessed using wget  [ tab or space ] Name of the deb file without any spaces or special chars except hyphen.</li>
 <li>For example to install Atom Editor the deb-files.list should look like below.</li>
 </ul>
-<div class="codehilite"><pre><span></span>https://atom-installer.github.com/v1.21.1/atom-amd64.deb  ATOM-Editor.deb
+<div class="codehilite"><pre><span></span>https://atom-installer.github.com/v1.21.1/atom-amd64.deb,ATOM-Editor.deb
 </pre></div>
 
 <ul>
-<li>First part is the URL to the deb file separated by a tab name of the file.</li>
+<li>First part is the URL to the deb file separated by ',' of the file.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note on file names in configuration</p>
@@ -958,9 +968,9 @@ Pre-requisite is that python-pip package is pre installed, If not , will be inst
 <li>If you wish to run python or other code, please use shell-script as wrapper.</li>
 </ul>
 <h3 id="honoring-simulate-flag-in-hooks">Honoring simulate flag in hooks<a class="headerlink" href="#honoring-simulate-flag-in-hooks" title="Permanent link">&para;</a></h3>
-<p>Check for environment variable <code>AE_SIMULATE</code>. By default its false and is set to true, if <code>--simulate or -s</code> falg is used.</p>
+<p>Check for file <code>.ae_simulate</code>. By default its is not preset. It is preset &amp; set to true, if <code>--simulate or -s</code> flag is used.</p>
 <h3 id="honoring-autopilot-falg-in-hooks">Honoring <code>AUTOPILOT</code> falg in hooks<a class="headerlink" href="#honoring-autopilot-falg-in-hooks" title="Permanent link">&para;</a></h3>
-<p>Check for environment variable <code>AUTOPILOT</code>. It is set to true if AUTOPILOT is true. Otherwise its false or not set.</p>
+<p>Check for contents of file <code>.autopilot</code>. It is set to true if AUTOPILOT is true. Otherwise its not present.</p>
 <h2 id="all-in-one">All In one<a class="headerlink" href="#all-in-one" title="Permanent link">&para;</a></h2>
 <p>This will perform Following actions. (In the following order)</p>
 <ul>

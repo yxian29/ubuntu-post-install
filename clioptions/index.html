@@ -788,7 +788,7 @@ OR
 Default behavior is to clean apt cache and delete downloaded DEB packages.</p>
 <div class="admonition bug">
 <p class="admonition-title">Python packages</p>
-<p>Python package installation does not use cached packages. (It uses <code>--no-cache-dir</code> falg)</p>
+<p>Python package installation does not honor this flag.</p>
 </div>
 <h2 id="enable-pre-post-task-hooks">Enable pre &amp; post task hooks<a class="headerlink" href="#enable-pre-post-task-hooks" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
@@ -805,10 +805,9 @@ They are disabled by default and need to be enabled via <code>enable-pre</code> 
 <h2 id="do-not-report-statistics">Do not report statistics<a class="headerlink" href="#do-not-report-statistics" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>
-<p>For pre task hooks
-<div class="codehilite"><pre><span></span>./after-effects --no-stats
+<p><div class="codehilite"><pre><span></span>./after-effects --no-stats
 </pre></div>
-For post task hooks
+OR
 <div class="codehilite"><pre><span></span>./after-effects --no-reporting
 </pre></div></p>
 </div>

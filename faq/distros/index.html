@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.4, mkdocs-material-2.9.1">
+      <meta name="generator" content="mkdocs-0.17.5, mkdocs-material-2.9.2">
     
     
       
@@ -232,6 +232,8 @@
     </li>
   
 
+      
+        
       
         
       
@@ -455,6 +457,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../yaml/" title="Example Config YAML" class="md-nav__link">
+      Example Config YAML
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../../logs/" title="Logs" class="md-nav__link">
       Logs
     </a>
@@ -541,7 +555,7 @@
                 
                 <h1 id="what-all-distributions-are-supported">What all distributions are supported?<a class="headerlink" href="#what-all-distributions-are-supported" title="Permanent link">&para;</a></h1>
 <p>In short? Ubuntu, its official flavors (Kubuntu,Ubuntu Mate etc), Linux Mint and Elementary.</p>
-<details class="info"><summary>About 32 bit Support</summary><ul><li>Though 32 bit is supported, Testing in Travis CI, containers and locally all are done using 64 bit machine and containers. If something breaks please report it and use it with caution on 32 bit machines.</li><li>Since 17.10 Ubuntu no longer provides 32 bit ISO images. You have to use Ubuntu flavors like Lubuntu. Xubuntu or use minimal ISO.</li></ul></details><div class="admonition warning">
+<details class="info"><summary>About 32 bit &amp; ARM Support</summary><ul><li>Though 32 bit &amp; ARM is supported, Testing in Travis CI, containers and locally all are done using 64 bit machine and containers. If something breaks please report it and use it with caution on 32 bit machines.</li><li>Some repositories are not available for ARM and 32 bit architecture.</li><li>Since 17.10 Ubuntu no longer provides 32 bit ISO images. You have to use Ubuntu flavors like Lubuntu. Xubuntu or use minimal ISO.</li></ul></details><div class="admonition warning">
 <p class="admonition-title">Warning!</p>
 <p><strong>Script will exit, if it cannot recognize the distribution.</strong></p>
 </div>
@@ -550,7 +564,7 @@
 <thead>
 <tr>
 <th align="left">Distribution</th>
-<th align="left">Codename/Version</th>
+<th align="left">Code name/Version</th>
 <th>Supported</th>
 <th align="left">Notes</th>
 </tr>
@@ -559,12 +573,6 @@
 <tr>
 <td align="left">Ubuntu 18.04</td>
 <td align="left">Bionic Beaver</td>
-<td>Yes</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">Ubuntu 17.10</td>
-<td align="left">Artful Aardvark</td>
 <td>Yes</td>
 <td align="left"></td>
 </tr>
@@ -583,8 +591,20 @@
 <tr>
 <td align="left">Ubuntu 18.10</td>
 <td align="left">Cosmic Cuttlefish</td>
-<td>No</td>
+<td>--</td>
 <td align="left">Only use it for testing</td>
+</tr>
+<tr>
+<td align="left">Ubuntu 17.10</td>
+<td align="left">Artful Aardvark</td>
+<td>No</td>
+<td align="left">Reached EOL July 2018</td>
+</tr>
+<tr>
+<td align="left">Ubuntu 17.10</td>
+<td align="left">Zesty Zapus</td>
+<td>No</td>
+<td align="left">Reached EOL Jan 13<sup>th</sup> 2018</td>
 </tr>
 <tr>
 <td align="left">Linux Mint 17</td>
@@ -637,20 +657,26 @@
 <tr>
 <td align="left">Linux Mint 19</td>
 <td align="left">Tara</td>
-<td>No</td>
-<td align="left">Will be in the future</td>
+<td>Yes</td>
+<td align="left">Not tested</td>
 </tr>
 <tr>
 <td align="left">Elementary-OS</td>
 <td align="left">Freya</td>
 <td>Yes</td>
-<td align="left"></td>
+<td align="left">Not tested</td>
 </tr>
 <tr>
 <td align="left">Elementary-OS</td>
 <td align="left">Loki</td>
 <td>Yes</td>
-<td align="left"></td>
+<td align="left">Not tested</td>
+</tr>
+<tr>
+<td align="left">Elementary-OS</td>
+<td align="left">Juno</td>
+<td>Yes</td>
+<td align="left">Not tested</td>
 </tr>
 <tr>
 <td align="left">Budgie Remix</td>
@@ -662,7 +688,7 @@
 <td align="left">PoP! OS</td>
 <td align="left">17.10 &amp; 18.04</td>
 <td>Yes</td>
-<td align="left"></td>
+<td align="left">Not tested</td>
 </tr>
 <tr>
 <td align="left">Linux-Lite</td>
@@ -696,7 +722,7 @@
 </tr>
 </tbody>
 </table>
-<details class="info"><summary>Pre-Release and development builds</summary><ul><li>Support for Ubuntu Pre-release builds, Elementary OS Juno are <strong>experimental</strong> and things might break.</li><li>They have not been released in stable release channels and are considered development versions of the release.</li><li>It is strongly advised to use them in a chroot or a in a VM and <strong>not</strong> as a daily driver.</li></ul></details><details class="info"><summary>New App-store on Linux Mint 18.3 and above</summary><p>Linux mint 18.3 &amp; later releases uses a new App-Store, from which you can directly install Chrome and other popular tools. There may be some conflicts in the <code>/etc/apt/sources.list.d</code>. Where, a single repository might be configured multiple times with same priority. Use it with caution. The scripts are not tested on Travis on Linux Mint.</p></details>
+<details class="info"><summary>Pre-Release and development builds</summary><ul><li>Support for Ubuntu Pre-release builds, Elementary OS Juno are <strong>experimental</strong> and things might break.</li><li>They have not been released in stable release channels and are considered development versions of the release.</li><li>It is strongly advised to use them in a chroot or a in a VM and <strong>not</strong> as a daily driver.</li></ul></details><details class="info"><summary>New App-store on Linux Mint 18.3 and above</summary><p>Linux mint 18.3 &amp; later releases uses a new App-Store, from which you can directly install Chrome and other popular tools. There may be some conflicts in the <code class="codehilite">/etc/apt/sources.list.d</code>. Where, a single repository might be configured multiple times with same priority. Use it with caution. The scripts are not tested on Travis on Linux Mint.</p></details>
                 
                   
                 
@@ -787,7 +813,7 @@
     
       <script src="../../assets/javascripts/application.a59e2a89.js"></script>
       
-      <script>app.initialize({version:"0.17.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"0.17.5",url:{base:"../.."}})</script>
       
     
     

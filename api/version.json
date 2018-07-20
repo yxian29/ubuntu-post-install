@@ -1,0 +1,11 @@
+{
+    "api": 1,
+    "stats": {
+        "node": "https://stats.ae.prasadt.com/report",
+        "report": true
+    },
+    "version": {
+        "name": "4.1 Beta",
+        "number": 44
+    }
+}

@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.4, mkdocs-material-2.9.1">
+      <meta name="generator" content="mkdocs-0.17.5, mkdocs-material-2.9.2">
     
     
       
@@ -230,6 +230,8 @@
     </li>
   
 
+      
+        
       
         
       
@@ -442,6 +444,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../yaml/" title="Example Config YAML" class="md-nav__link">
+      Example Config YAML
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../logs/" title="Logs" class="md-nav__link">
       Logs
     </a>
@@ -542,31 +556,29 @@
 </div>
 <p>Following Tests are done on Travis-CI.</p>
 <ul>
-<li><code>shellcheck</code> every executable script (Job #build.1)</li>
-<li>Test on Artful container (Job #build.2)</li>
-<li>Test on Xenial container (Job #build.3)</li>
-<li>Test on Bionic Beaver (Job #build.4)</li>
-<li>Test on Trusty (Host) (Job #build.5) (Soon to be removed)</li>
-<li>Test on Debian 9 Stretch (Job #build.6)</li>
-<li>Test on Debian 9 Stretch (Job #build.7)</li>
-<li>Test on Ubuntu Cosmic  (Job #build.8)</li>
-<li>Build, Test &amp; deploy documentation (Job #build.9)</li>
+<li><code class="codehilite">shellcheck</code> every executable script (Job #build.1)</li>
+<li>Test on Xenial container (Job #build.2)</li>
+<li>Test on Bionic Beaver (Job #build.3)</li>
+<li>Test on Trusty (Host) (Job #build.4)</li>
+<li>Test on Debian 9 Stretch (Job #build.5)</li>
+<li>Test on Debian 8 Jessie (Job #build.6)</li>
+<li>Test on Ubuntu Cosmic  (Job #build.7)</li>
+<li>Build, Test &amp; deploy documentation (Job #build.8).</li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>Trusty tests do not install indicator-kdeconnect, peek, openjdk-8-jdk, gnome-todo , gnome-calendar, polari and their PPAs. Please modify your lists accordingly.</p>
 </div>
 <ul>
-<li>Test on Cosmic Cuttlefish (Job #build.6) using base image from <code>http://cdimage.ubuntu.com/ubuntu-base/daily/</code></li>
-<li>Build documentation using mkdocs (Job #build.7).</li>
-<li>Dockerfiles used for building the image are in <code>/dockerfiles</code> directory, they use official Ubuntu base images with script dependencies.</li>
-<li>Test scripts are located in <code>/tests</code> directory.</li>
+<li>Tests on Cosmic Cuttlefish (Job #build.8) use base image from <code class="codehilite">http://cdimage.ubuntu.com/ubuntu-base/daily/</code></li>
+<li>Dockerfiles used for building the image are in <code class="codehilite">/dockerfiles</code> directory, they use official Ubuntu base images with script dependencies.</li>
+<li>Test scripts are located in <code class="codehilite">/tests</code> directory.</li>
 <li>Since its a time consuming process only simulated install is done on CI. Linux mint and Elementary are not tested in containers as of now, but will be in the future.</li>
 <li>It is possible that there might be some errors specific to your setup. Please report if so. It is <strong>Strongly</strong> advised to try install apps and deb files in simulate mode first before proceeding with actual installation.</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Never set environment variable <code>TRAVIS=true</code> unless you are running on TRAVIS or are sure of its effects.</p>
+<p>Never set environment variable <code class="codehilite">CI=true</code> unless you are running in a CI environment or are sure of its effects.</p>
 </div>
                 
                   
@@ -658,7 +670,7 @@
     
       <script src="../assets/javascripts/application.a59e2a89.js"></script>
       
-      <script>app.initialize({version:"0.17.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"0.17.5",url:{base:".."}})</script>
       
     
     

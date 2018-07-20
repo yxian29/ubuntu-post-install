@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.4, mkdocs-material-2.9.1">
+      <meta name="generator" content="mkdocs-0.17.5, mkdocs-material-2.9.2">
     
     
       
@@ -230,6 +230,8 @@
     </li>
   
 
+      
+        
       
         
       
@@ -442,6 +444,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../yaml/" title="Example Config YAML" class="md-nav__link">
+      Example Config YAML
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../logs/" title="Logs" class="md-nav__link">
       Logs
     </a>
@@ -521,6 +535,19 @@
     Anonymous stats collection
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#additional-note-for-sigma-users" title="Additional note for sigma users" class="md-nav__link">
+    Additional note for sigma users
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -559,6 +586,19 @@
     Anonymous stats collection
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#additional-note-for-sigma-users" title="Additional note for sigma users" class="md-nav__link">
+    Additional note for sigma users
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -583,15 +623,15 @@
                 <h1 id="privacy-policy">Privacy Policy<a class="headerlink" href="#privacy-policy" title="Permanent link">&para;</a></h1>
 <p>Our privacy policy related to website is available <a href="https://prasadt.com/privacy-policy">here</a>.</p>
 <h2 id="anonymous-stats-collection">Anonymous stats collection<a class="headerlink" href="#anonymous-stats-collection" title="Permanent link">&para;</a></h2>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Your passwords, usernames, environment variables of anything sensitive is not collected.</p>
-</div>
-<p>The script <code>after-effects</code> collects anonymous usage statistics. The following might be collected.</p>
+<p>!!! info
+    Your passwords, usernames, environment variables or anything sensitive is not collected.</p>
+<p>The script <code class="codehilite">after-effects</code> collects anonymous usage statistics. The following might be collected.</p>
 <ul>
 <li>Randomized UUID generated per run.</li>
 <li>Last exit code.</li>
 <li>System Architecture (x64/x86/ARM/ARM64).</li>
+<li>Amount of RAM &amp; CPU Model</li>
+<li>Number of GPU &amp; GPU Vendor</li>
 <li>Total execution time.</li>
 <li>Distribution name (Ubuntu, Linux Mint etc.)</li>
 <li>Distribution code name (bionic, artful etc)</li>
@@ -604,9 +644,16 @@
 <p class="admonition-title">Tip</p>
 <ul>
 <li>No personally identifiable information is collected or reported back.</li>
-<li>This feature can be disabled via <code>--no-stats</code> flag.</li>
+<li>This feature can be disabled via <code class="codehilite">--no-stats</code> flag.</li>
 </ul>
 </div>
+<h3 id="additional-note-for-sigma-users">Additional note for sigma users<a class="headerlink" href="#additional-note-for-sigma-users" title="Permanent link">&para;</a></h3>
+<p><em>Note This applies ONLY if you are using the script from my git server. This does NOT APPLY for any GitHub branches/tags/releases.</em></p>
+<ul>
+<li>Currently Github branches do not report stats and it is just a placeholder.</li>
+<li>If you are using the script from my git server, stats are reported unless you disable them. UUID is <strong>NOT</strong> random for each run and is based on MAC address of one of your Ethernet devices.(If you have many)</li>
+<li>Scripts have same version number and are in sync with Github. You can identify the difference by looking at REL_NAME. It has <code class="codehilite">-sigma</code></li>
+</ul>
                 
                   
                 
@@ -683,7 +730,7 @@
     
       <script src="../assets/javascripts/application.a59e2a89.js"></script>
       
-      <script>app.initialize({version:"0.17.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"0.17.5",url:{base:".."}})</script>
       
     
     

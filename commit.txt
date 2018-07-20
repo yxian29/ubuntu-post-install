@@ -1,5 +1,3 @@
-SRC Commit ID  : bfc2549
-SRC Message    : Merge pull request #10 from tprasadtp/debian
-
-Debian Support
+SRC Commit ID  : 3ece621
+SRC Message    : dont make get script complicated
 Built from     : master

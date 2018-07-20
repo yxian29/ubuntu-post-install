@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.4, mkdocs-material-2.9.1">
+      <meta name="generator" content="mkdocs-0.17.5, mkdocs-material-2.9.2">
     
     
       
@@ -247,6 +247,8 @@
       
         
       
+        
+      
     </ul>
   </div>
 </nav>
@@ -433,6 +435,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#configuration-type" title="Configuration type" class="md-nav__link">
+    Configuration type
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#simulating-package-installation" title="Simulating package installation" class="md-nav__link">
     Simulating package installation
   </a>
@@ -482,8 +491,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#enable-pre-post-task-hooks" title="Enable pre &amp; post task hooks" class="md-nav__link">
-    Enable pre &amp; post task hooks
+  <a href="#hide-remotelocal-yaml-configuration-data" title="Hide Remote/local YAML configuration data" class="md-nav__link">
+    Hide Remote/local YAML configuration data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prefer-local-lists" title="Prefer Local lists" class="md-nav__link">
+    Prefer Local lists
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-custom-configuration-file" title="Use Custom Configuration file" class="md-nav__link">
+    Use Custom Configuration file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-custom-version-information-file" title="Use Custom Version information file" class="md-nav__link">
+    Use Custom Version information file
   </a>
   
 </li>
@@ -526,6 +556,18 @@
   <li class="md-nav__item">
     <a href="../config/" title="Configuration" class="md-nav__link">
       Configuration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../yaml/" title="Example Config YAML" class="md-nav__link">
+      Example Config YAML
     </a>
   </li>
 
@@ -611,6 +653,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#configuration-type" title="Configuration type" class="md-nav__link">
+    Configuration type
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#simulating-package-installation" title="Simulating package installation" class="md-nav__link">
     Simulating package installation
   </a>
@@ -660,8 +709,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#enable-pre-post-task-hooks" title="Enable pre &amp; post task hooks" class="md-nav__link">
-    Enable pre &amp; post task hooks
+  <a href="#hide-remotelocal-yaml-configuration-data" title="Hide Remote/local YAML configuration data" class="md-nav__link">
+    Hide Remote/local YAML configuration data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prefer-local-lists" title="Prefer Local lists" class="md-nav__link">
+    Prefer Local lists
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-custom-configuration-file" title="Use Custom Configuration file" class="md-nav__link">
+    Use Custom Configuration file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-custom-version-information-file" title="Use Custom Version information file" class="md-nav__link">
+    Use Custom Version information file
   </a>
   
 </li>
@@ -693,28 +763,43 @@
                 
                 
                 <h1 id="command-line-options">Command line options<a class="headerlink" href="#command-line-options" title="Permanent link">&para;</a></h1>
+<h2 id="configuration-type">Configuration type<a class="headerlink" href="#configuration-type" title="Permanent link">&para;</a></h2>
+<p>You have two options of configuring this script.</p>
+<ol>
+<li>using .list files in <code class="codehilite">data</code>
+  <div class="codehilite"><pre><span></span><span class="go">  ./after-effects --lists</span>
+</pre></div></li>
+<li>Using YAML files [they can be local or remote]
+  <div class="codehilite"><pre><span></span><span class="go">  ./after-effects --yaml</span>
+</pre></div>
+You need to specify which type to use. Not specifying will throw an error. You cannot mix configurations in YAML and lists.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Shorthand flags</p>
+<p>You can also use short hand version of the flags <code class="codehilite">-Y</code> for YAML and <code class="codehilite">-L</code> for lists. Please note that lowercase case options have different meaning than uppercase ones.</p>
+</div>
 <h2 id="simulating-package-installation">Simulating package installation<a class="headerlink" href="#simulating-package-installation" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>
-<p><div class="codehilite"><pre><span></span>./after-effects -s
+<p><div class="codehilite"><pre><span></span><span class="go">./after-effects -s</span>
 </pre></div>
 OR
-<div class="codehilite"><pre><span></span>./after-effects --simulate
+<div class="codehilite"><pre><span></span><span class="go">./after-effects --simulate</span>
 </pre></div></p>
 </div>
 <details class="tip"><summary>This flag/option applies to following tasks</summary><ul><li>Installing apt packages.</li><li>Installing Debian package archives (DEBs).</li><li>Installing Python packages.</li><li>Upgrading system packages.</li><li>Purging unwanted packages.</li></ul></details><p>Following details should explain the behavior of this flag. Please do have a look at exceptions, as all tasks cannot be simulated.</p>
 <ul>
-<li>This option will simulate installing packages mentioned in the lists, using the apt-get in-built dry-run option <code>apt-get install -s</code> to simulate the installation of packages. Nothing will be downloaded except repository metadata (deb files if option is chosen). Packages will not be installed.</li>
+<li>This option will simulate installing packages mentioned in the lists, using the apt-get in-built dry-run option <code class="codehilite">apt-get install -s</code> to simulate the installation of packages. Nothing will be downloaded except repository metadata (deb files if option is chosen). Packages will not be installed.</li>
 <li>This option can be used to check if the files in the lists are compatible/available in the repository.</li>
-<li>Installation of DEB files also behaves similarly. It uses <code>dpkg -i --dry-run</code> to simulate installation.</li>
+<li>Installation of DEB files also behaves similarly. It uses <code class="codehilite">dpkg -i --dry-run</code> to simulate installation.</li>
 <li>Its a very good idea to simulate installation when you have reconfigured the apps and packages in the list to check what might be error prone.</li>
 <li>In case of DEB package files, they <strong>will</strong> be downloaded unlike apt-get package installs.</li>
 </ul>
-<details class="bug"><summary>Exceptions</summary><ul><li><strong>Simulate flag will not simulate or honor adding Repositories or PPAs.</strong></li><li>If you want to revert the changes please use <strong>Reset Repositories</strong> option.</li><li>PPAs and repositories will be added regardless of the flag.</li><li>Python package installation cannot be simulated. (pip lacks support for it) The script will skip installing apt dependencies and python packages, if simulate option is used.
+<details class="bug"><summary>Exceptions - Not everything can be simulated</summary><ul><li><strong>Simulate flag will not simulate adding Repositories or PPAs.</strong></li><li>If you want to revert the changes please use <strong>Reset Repositories</strong> option.</li><li>PPAs and repositories <strong>will</strong> be added regardless of the flag.</li><li>Python package installation cannot be simulated. (pip lacks support for it) The script will skip installing apt dependencies and python packages, if simulate option is used.
   it simulate option is used.</li><li>APT package upgrades and apt repository metadata updates cannot be simulated. Only a list of packages upgrade-able will be listed in the log file in case of upgrades.</li><li>Simulate flag will not simulate installing dependencies for adding or deleting repositories and PPAs.</li></ul></details><h2 id="skip-version-checks">Skip Version Checks<a class="headerlink" href="#skip-version-checks" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>
-<div class="codehilite"><pre><span></span>./after-effects --no-version-check
+<div class="codehilite"><pre><span></span><span class="go">./after-effects --no-version-check</span>
 </pre></div>
 
 </div>
@@ -722,19 +807,19 @@ OR
 <h2 id="fix-for-latest-ubuntu-releases">Fix for latest Ubuntu releases<a class="headerlink" href="#fix-for-latest-ubuntu-releases" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>
-<p><div class="codehilite"><pre><span></span>./after-effects -f
+<p><div class="codehilite"><pre><span></span><span class="go">./after-effects -f</span>
 </pre></div>
 OR
-<div class="codehilite"><pre><span></span>./after-effects --fix
+<div class="codehilite"><pre><span></span><span class="go">./after-effects --fix</span>
 </pre></div></p>
 </div>
 <details class="tip"><summary>This flag/option applies to following repositories</summary><ul><li>Google Cloud SDK</li><li>GCSFUSE</li><li>InSync</li><li>Docker Community Edition</li><li>Wine HQ</li></ul></details><p>Usually it takes a while for additional Repositories (Docker, Google Cloud SDK etc) to add support for latest release of Ubuntu. However we can use the previous release for which packages are available. So, using packages built for previous release works fine most of the time. This is also good fix if you are running a alpha or beta release of Ubuntu.</p>
 <ul>
 <li>By default this option is disabled.</li>
-<li>Use <code>sudo ./after-effects -f</code> or <code>sudo ./after-effects --fix</code> to enable this.</li>
+<li>Use <code class="codehilite">sudo ./after-effects -f</code> or <code class="codehilite">sudo ./after-effects --fix</code> to enable this.</li>
 <li>Repositories like Spotify and Google Chrome do not use code names in their repository URLs. So the above workaround is not necessary.</li>
 <li>Derivatives of Ubuntu will use the code name of Ubuntu on which they are based. For example Linux mint 18.2 Serena will use code name xenial since it is based on Ubuntu 16.04 Xenial Xerus</li>
-<li>This option applies only for the latest release mentioned in the variable <code>code_name_latest_release</code>. and will be ignored if the release is not latest.</li>
+<li>This option applies only for the latest release mentioned in the variable <code class="codehilite">code_name_latest_release</code>. and will be ignored if the release is not latest.</li>
 <li>Variables in current version are (As of Dec 2017) change them if necessary.</li>
 </ul>
 <div class="codehilite"><pre><span></span><span class="nb">readonly</span> <span class="nv">code_name_latest_release</span><span class="o">=</span><span class="s2">&quot;bionic&quot;</span>
@@ -742,51 +827,54 @@ OR
 <span class="nb">readonly</span> <span class="nv">codename_upcoming_release</span><span class="o">=</span><span class="s2">&quot;cosmic&quot;</span>
 </pre></div>
 
-<details class="danger"><summary>Note for Pre-Release/ development version of Ubuntu</summary><ul><li>If you are using a pre-release version of Ubuntu, you can use <code>--pre-release</code> flag to apply the above mentioned fix to pre-release version of Ubuntu.</li><li>This flag can be used independent of <code>--fix</code>. If both are used together then both flags will be applied if the release is upcoming-release.</li><li>If the release is stable, only <code>--fix</code> flag will be valid and <code>--pre-release</code> is ignored.</li><li>This is how it works:  If the repositories are  not available for latest stable release as well, go back a release. Ex. If the pre-release is 18.04 and the repositories is not available for 17.10 as well, we use 17.04 repositories. Usually happens in first few days of development cycle of 18.04.</li></ul></details><h2 id="skip-confirmation-prompts">Skip confirmation prompts<a class="headerlink" href="#skip-confirmation-prompts" title="Permanent link">&para;</a></h2>
+<details class="danger"><summary>Note for Pre-Release/ development version of Ubuntu</summary><ul><li>If you are using a pre-release version of Ubuntu, you can use <code class="codehilite">--pre-release</code> flag to apply the above mentioned fix to pre-release version of Ubuntu.</li><li>This flag can be used independent of <code class="codehilite">--fix</code>. If both are used together then both flags will be applied if the release is upcoming-release.</li><li>If the release is stable, only <code class="codehilite">--fix</code> flag will be valid and <code class="codehilite">--pre-release</code> is ignored.</li><li>This is how it works:  If the repositories are  not available for latest stable release as well, go back a release. Ex. If the pre-release is 18.04 and the repositories is not available for 17.10 as well, we use 17.04 repositories. Usually happens in first few days of development cycle of 18.04.</li></ul></details><h2 id="skip-confirmation-prompts">Skip confirmation prompts<a class="headerlink" href="#skip-confirmation-prompts" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>
-<p><div class="codehilite"><pre><span></span>./after-effects -y
+<p><div class="codehilite"><pre><span></span><span class="go">./after-effects -y</span>
 </pre></div>
 OR
-<div class="codehilite"><pre><span></span>./after-effects --yes
+<div class="codehilite"><pre><span></span><span class="go">./after-effects --yes</span>
 </pre></div></p>
 </div>
-<p>From v3.0 onward, you will be asked for confirmation before performing the task selected. If you would like to bypass this on a CI environments like TRAVIS or for any other reason, you can do so by running the script with <code>sudo ./after-effects -y</code> or <code>sudo ./after-effects --yes</code></p>
+<p>From v3.0 onward, you will be asked for confirmation before performing the task selected. If you would like to bypass this on a CI environments like TRAVIS or for any other reason, you can do so by running the script with <code class="codehilite">sudo ./after-effects -y</code> or <code class="codehilite">sudo ./after-effects --yes</code></p>
 <h2 id="purge-not-required-packages">Purge not required packages<a class="headerlink" href="#purge-not-required-packages" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>
-<p><div class="codehilite"><pre><span></span>./after-effects -d
+<p><div class="codehilite"><pre><span></span><span class="go">./after-effects -d</span>
 </pre></div>
 OR
-<div class="codehilite"><pre><span></span>./after-effects --deboalt
+<div class="codehilite"><pre><span></span><span class="go">./after-effects --deboalt</span>
 </pre></div></p>
 </div>
 <p>Usually Ubuntu comes with some pre-installed games, packages which you sometimes do not need. This option is a switch to used in purging these packages mentioned in the subsequent sections. Since it is possible that user might purge necessary packages like sudo or other core system components, these just acts like a barrier from accidentally doing so.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This flag <strong>MUST</strong> be passed, if you intend to purge packages from system. Otherwise you will receive an error.</p>
+<ul>
+<li>This flag <strong>MUST</strong> be passed, if you intend to purge packages from system. Otherwise you will receive an error.</li>
+<li>If you are using YML config file you <strong>MUST</strong> set   <code class="codehilite"><span class="n">purge_enabled</span><span class="o">:</span> <span class="kc">true</span></code> under config.flags. See Example YAML file for more info.</li>
+</ul>
 </div>
 <h2 id="delete-log-file">Delete log file<a class="headerlink" href="#delete-log-file" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>
-<p><div class="codehilite"><pre><span></span>./after-effects -l
+<p><div class="codehilite"><pre><span></span><span class="go">./after-effects -l</span>
 </pre></div>
 OR
-<div class="codehilite"><pre><span></span>./after-effects --delete-log
+<div class="codehilite"><pre><span></span><span class="go">./after-effects --delete-log</span>
 </pre></div></p>
 </div>
 <p>Just a quick way to delete logs generated by this script.</p>
-<div class="admonition bug">
+<div class="admonition warning">
 <p class="admonition-title">Flag priority</p>
-<p>If you pass <code>-l</code> in the beginning rest of the commands will be ignored, as the script exits after deleting the log!</p>
+<p>If you pass <code class="codehilite">-l</code> in the beginning rest of the commands will be ignored, as the script exits after deleting the log!</p>
 </div>
 <h2 id="keep-downloaded-deb-files">Keep downloaded DEB files<a class="headerlink" href="#keep-downloaded-deb-files" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>
-<p><div class="codehilite"><pre><span></span>./after-effects -k
+<p><div class="codehilite"><pre><span></span><span class="go">./after-effects -k</span>
 </pre></div>
 OR
-<div class="codehilite"><pre><span></span>./after-effects --keep-debs
+<div class="codehilite"><pre><span></span><span class="go">./after-effects --keep-debs</span>
 </pre></div></p>
 </div>
 <p>Keeps packages cached by APT and downloaded DEB packages.
@@ -795,25 +883,52 @@ Default behavior is to clean apt cache and delete downloaded DEB packages.</p>
 <p class="admonition-title">Python packages</p>
 <p>Python package installation does not honor this flag.</p>
 </div>
-<h2 id="enable-pre-post-task-hooks">Enable pre &amp; post task hooks<a class="headerlink" href="#enable-pre-post-task-hooks" title="Permanent link">&para;</a></h2>
+<h2 id="hide-remotelocal-yaml-configuration-data">Hide Remote/local YAML configuration data<a class="headerlink" href="#hide-remotelocal-yaml-configuration-data" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>
-<p>For pre task hooks
-<div class="codehilite"><pre><span></span>./after-effects --enable-pre
+<div class="codehilite"><pre><span></span>./after-effects --hide-config
 </pre></div>
-For post task hooks
-<div class="codehilite"><pre><span></span>./after-effects --enable-post
+
+</div>
+<p>Hides displaying YAML configuration data in the output.</p>
+<h2 id="prefer-local-lists">Prefer Local lists<a class="headerlink" href="#prefer-local-lists" title="Permanent link">&para;</a></h2>
+<div class="admonition snippet">
+<p class="admonition-title">Usage</p>
+<p><div class="codehilite"><pre><span></span><span class="go">./after-effects -L</span>
+</pre></div>
+OR
+<div class="codehilite"><pre><span></span><span class="go">./after-effects --lists</span>
 </pre></div></p>
 </div>
-<p>There is an option to execute set of scripts defined in configuration files, before and after all the tasks are complete.
-They are disabled by default and need to be enabled via <code>enable-pre</code> and <code>--enable-post</code> options. They can be used independently of each other. See Tasks section for more details on pre-post hooks.</p>
+<p>Using this option, you can chose to use the lists file which you have locally and not worry about YAML and shit.</p>
+<h2 id="use-custom-configuration-file">Use Custom Configuration file<a class="headerlink" href="#use-custom-configuration-file" title="Permanent link">&para;</a></h2>
+<div class="admonition snippet">
+<p class="admonition-title">Usage</p>
+<p><div class="codehilite"><pre><span></span><span class="go">./after-effects --config-file &lt;filename&gt;</span>
+</pre></div>
+OR
+<div class="codehilite"><pre><span></span><span class="go">./after-effects -C &lt;filename&gt;</span>
+</pre></div></p>
+</div>
+<p>You can prefer using custom configuration file you have stored locally [It should be available via local paths or network share. not via ftp or http]. Enabling this option will disable fetching configuration from api-endpoints mentioned or default endpoints.</p>
+<h2 id="use-custom-version-information-file">Use Custom Version information file<a class="headerlink" href="#use-custom-version-information-file" title="Permanent link">&para;</a></h2>
+<p>Script always checks if its running the latest version available. If not it throws an error and exits. If you wish to skip that, please use <code class="codehilite">--no-version-check</code>. This is always recommended over using a custom version information file. However it is possible to provide a custom version info file, a YAML file which holds version information.</p>
+<div class="admonition snippet">
+<p class="admonition-title">Usage</p>
+<p><div class="codehilite"><pre><span></span><span class="go">./after-effects --version-file &lt;filename&gt;</span>
+</pre></div>
+OR
+<div class="codehilite"><pre><span></span><span class="go">./after-effects -V &lt;filename&gt;</span>
+</pre></div></p>
+</div>
+<p>Example version files are in <code class="codehilite">api</code> directory. All the fields are mandatory.</p>
 <h2 id="do-not-report-statistics">Do not report statistics<a class="headerlink" href="#do-not-report-statistics" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>
-<p><div class="codehilite"><pre><span></span>./after-effects --no-stats
+<p><div class="codehilite"><pre><span></span><span class="go">./after-effects --no-stats</span>
 </pre></div>
 OR
-<div class="codehilite"><pre><span></span>./after-effects --no-reporting
+<div class="codehilite"><pre><span></span><span class="go">./after-effects -S</span>
 </pre></div></p>
 </div>
 <p>Disables reporting statistics back to server.</p>
@@ -822,6 +937,8 @@ OR
 <li>A UUID generated for each execution, (its random and is not persistent across runs),</li>
 <li>Host-name,</li>
 <li>Last exit code,</li>
+<li>Amount of RAM &amp; CPU Model</li>
+<li>Number of GPU &amp; GPU Vendor</li>
 <li>System Architecture (x64/x86/ARM/ARM64),</li>
 <li>Total execution time,</li>
 <li>Distribution name (Ubuntu, Linux Mint etc.),</li>
@@ -830,13 +947,17 @@ OR
 <li>Flags used,</li>
 <li>Timezone and system language.</li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Disabling stat reporting will also disable remote config.</p>
-</div>
-<details class="question"><summary>Privacy Concerns?</summary><ul><li>If you are freaking out, its a shell script !! You can literally look into it and check what's collected. Why if you ask? I mostly use it on a bunch of machines and would like to keep an eye on how it did.</li><li>Data will be stored in AWS DynamoDB and Google Firebase Real-time Database.
+<details class="question"><summary>Privacy Concerns?</summary><ul><li>If you are freaking out, its a shell script !! You can literally look into it and check what's collected. Why if you ask? I mostly use it on a bunch of machines/VMs and would like to keep an eye on how it did.</li><li>Data will be stored in AWS DynamoDB and Google Firebase Real-time Database.
 Data will not be shared with any third party. Period. Only me or my team members will have access
-to it. If you run a search query on google, it probably collects more data than me. API endpoints may log your IP addresses. (Github, Google and AWS).</li><li>If you flood the reporting endpoints, you might get HTTP 429 errors as reporting endpoints have rate limits. Script will exit with code 29.</li></ul></details>
+to it. If you run a search query on google, it probably collects more data than me. API endpoints may log your IP addresses but script does not and WILL not collect IP addresses. (Github, Google and AWS).</li><li>If you flood the reporting endpoints, you might get HTTP 429 errors as reporting endpoints have rate limits. Script will exit with code 59.</li></ul></details><div class="admonition snippet">
+<p class="admonition-title">Usage</p>
+<p><div class="codehilite"><pre><span></span><span class="go">./after-effect -v</span>
+</pre></div>
+OR
+<div class="codehilite"><pre><span></span><span class="go">./after-effects --version</span>
+</pre></div></p>
+</div>
+<p>This will display version info. You do not have to be root to run this. For all the other tasks you need to be root or use sudo.</p>
                 
                   
                 
@@ -927,7 +1048,7 @@ to it. If you run a search query on google, it probably collects more data than 
     
       <script src="../assets/javascripts/application.a59e2a89.js"></script>
       
-      <script>app.initialize({version:"0.17.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"0.17.5",url:{base:".."}})</script>
       
     
     

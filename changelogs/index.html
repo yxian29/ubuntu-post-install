@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.4, mkdocs-material-2.9.1">
+      <meta name="generator" content="mkdocs-0.17.5, mkdocs-material-2.9.2">
     
     
       
@@ -247,6 +247,8 @@
       
         
       
+        
+      
     </ul>
   </div>
 </nav>
@@ -432,6 +434,18 @@
   <li class="md-nav__item">
     <a href="../config/" title="Configuration" class="md-nav__link">
       Configuration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../yaml/" title="Example Config YAML" class="md-nav__link">
+      Example Config YAML
     </a>
   </li>
 
@@ -835,7 +849,7 @@
 <li>Custom list of scripts can be run Before and after all the tasks.</li>
 <li>Add version checks, always run latest version</li>
 <li>Brand new documentation site</li>
-<li>Use <code>mkdocs</code> to generate documentation</li>
+<li>Use <code class="codehilite">mkdocs</code> to generate documentation</li>
 <li>Automatically push &amp; deploy to gh-pages</li>
 <li>Use Netlify to manage gh-pages site</li>
 <li>Check if script is in current directory, to avoid errors on hooks</li>
@@ -855,7 +869,7 @@
 </ul>
 <h2 id="version-34">Version 3.4<a class="headerlink" href="#version-34" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Delete cached and downloaded DEBs. (Can be changed with <code>-k</code> flag )</li>
+<li>Delete cached and downloaded DEBs. (Can be changed with <code class="codehilite">-k</code> flag )</li>
 <li>Remove Gnome Specific stuff from default list</li>
 <li>Remove PPAs incompatible with bionic</li>
 <li>Bionic is supported with --pre-release flag only with default list.</li>
@@ -886,7 +900,7 @@
 <li>Allow Bionic tests to fail on Travis CI.</li>
 <li>Dockerfiles &amp; tests for bionic.</li>
 <li>Inform in script if running on Upcoming release.</li>
-<li>Drop google-cloud-sdk from fixreponotavailable. Use <code>--pre-release</code> if using beta/alpha Ubuntu release.</li>
+<li>Drop google-cloud-sdk from fixreponotavailable. Use <code class="codehilite">--pre-release</code> if using beta/alpha Ubuntu release.</li>
 <li>Add Visual studio to repos instead of deb files</li>
 <li>Rename logging directory to after-effects</li>
 </ul>
@@ -900,7 +914,7 @@
 <ul>
 <li>If the simulate option is selected then Only calculate the upgrade but do not perform upgrade.</li>
 <li>Added improved Simulate options. Helpful when just want to change somethings and test scripts without really downloading and installing packages</li>
-<li>Simulate option is by default false and can be toggled by passing <code>-s</code> or <code>--simulate</code> while running the script via command line</li>
+<li>Simulate option is by default false and can be toggled by passing <code class="codehilite">-s</code> or <code class="codehilite">--simulate</code> while running the script via command line</li>
 </ul>
 <h3 id="partner-repositories-and-derivatives">Partner repositories and Derivatives<a class="headerlink" href="#partner-repositories-and-derivatives" title="Permanent link">&para;</a></h3>
 <ul>
@@ -909,7 +923,7 @@
 <h3 id="add-feature-purge-unwanted-packages">Add Feature: Purge Unwanted Packages<a class="headerlink" href="#add-feature-purge-unwanted-packages" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Fix a bug in PPA purge function where it would wait for user confirmation</li>
-<li>Add a feature to purge not required packages, usually games and boaltware which comes preloaded  with the install. It is necessary to pass a flag <code>-d</code> via command line to purge them while running the script since its dangerous</li>
+<li>Add a feature to purge not required packages, usually games and boaltware which comes preloaded  with the install. It is necessary to pass a flag <code class="codehilite">-d</code> via command line to purge them while running the script since its dangerous</li>
 </ul>
 <h3 id="logs-console-messages">Logs &amp; Console messages<a class="headerlink" href="#logs-console-messages" title="Permanent link">&para;</a></h3>
 <ul>
@@ -917,7 +931,7 @@
 </ul>
 <h3 id="travis-ci-and-docker-testing">Travis CI and Docker Testing<a class="headerlink" href="#travis-ci-and-docker-testing" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Added Dockerfiles used for test cases since base Ubuntu image does not have few necessary packages (<code>ping, wget, lsb-release, whiptail, iputils-ping</code>) and configuration required. Since most of these are bound to present on Ubuntu/Ubuntu Server/ Ubuntu derivatives it is not necessary to add them in the script.</li>
+<li>Added Dockerfiles used for test cases since base Ubuntu image does not have few necessary packages (<code class="codehilite">ping, wget, lsb-release, whiptail, iputils-ping</code>) and configuration required. Since most of these are bound to present on Ubuntu/Ubuntu Server/ Ubuntu derivatives it is not necessary to add them in the script.</li>
 <li>Added Docker and Travis CI detection . Now the logs will indicate if the script is running in Container or Travis CI</li>
 <li>Test Script on Travis CI in parallel using jobs.</li>
 <li>Test Script on Trusty using Travis Host</li>
@@ -1034,7 +1048,7 @@
     
       <script src="../assets/javascripts/application.a59e2a89.js"></script>
       
-      <script>app.initialize({version:"0.17.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"0.17.5",url:{base:".."}})</script>
       
     
     

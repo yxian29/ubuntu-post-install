@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.4, mkdocs-material-2.9.1">
+      <meta name="generator" content="mkdocs-0.17.5, mkdocs-material-2.9.2">
     
     
       
@@ -247,6 +247,8 @@
       
         
       
+        
+      
     </ul>
   </div>
 </nav>
@@ -371,8 +373,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-update-the-lists-to-suit-your-needs-optional" title="Step 2: Update the lists to suit your needs (Optional)" class="md-nav__link">
-    Step 2: Update the lists to suit your needs (Optional)
+  <a href="#step-2-update-the-lists-or-configyml-to-suit-your-needs-optional" title="Step 2: Update the lists or config.yml to suit your needs (Optional)" class="md-nav__link">
+    Step 2: Update the lists or config.yml to suit your needs (Optional)
   </a>
   
 </li>
@@ -380,13 +382,6 @@
         <li class="md-nav__item">
   <a href="#step-3-run-it" title="Step 3: Run it" class="md-nav__link">
     Step 3: Run it
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-rejoice" title="Step 4: Rejoice" class="md-nav__link">
-    Step 4: Rejoice
   </a>
   
 </li>
@@ -528,6 +523,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../yaml/" title="Example Config YAML" class="md-nav__link">
+      Example Config YAML
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../logs/" title="Logs" class="md-nav__link">
       Logs
     </a>
@@ -637,8 +644,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-update-the-lists-to-suit-your-needs-optional" title="Step 2: Update the lists to suit your needs (Optional)" class="md-nav__link">
-    Step 2: Update the lists to suit your needs (Optional)
+  <a href="#step-2-update-the-lists-or-configyml-to-suit-your-needs-optional" title="Step 2: Update the lists or config.yml to suit your needs (Optional)" class="md-nav__link">
+    Step 2: Update the lists or config.yml to suit your needs (Optional)
   </a>
   
 </li>
@@ -646,13 +653,6 @@
         <li class="md-nav__item">
   <a href="#step-3-run-it" title="Step 3: Run it" class="md-nav__link">
     Step 3: Run it
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-rejoice" title="Step 4: Rejoice" class="md-nav__link">
-    Step 4: Rejoice
   </a>
   
 </li>
@@ -680,18 +680,18 @@
 <h2 id="install-ubuntu">Install Ubuntu<a class="headerlink" href="#install-ubuntu" title="Permanent link">&para;</a></h2>
 <p>Install (if you haven't already) your choice of Ubuntu/Derivative as you would( If you wish to automate that too, you can use preseed.cfg file)</p>
 <h2 id="step-1-get-the-script">Step 1: Get the script<a class="headerlink" href="#step-1-get-the-script" title="Permanent link">&para;</a></h2>
-<h3 id="without-git">Without Git<a class="headerlink" href="#without-git" title="Permanent link">&para;</a></h3>
+<h4 id="without-git">Without Git<a class="headerlink" href="#without-git" title="Permanent link">&para;</a></h4>
 <p>Run this in Terminal</p>
-<div class="codehilite"><pre><span></span>wget -Nnv https://raw.githubusercontent.com/tprasadtp/ubuntu-post-install/master/get-after-effects.sh -O - <span class="p">|</span> bash
+<div class="codehilite"><pre><span></span><span class="go">wget -Nnv https://raw.githubusercontent.com/tprasadtp/ubuntu-post-install/master/get-after-effects.sh -O - | bash</span>
 </pre></div>
 
-<h3 id="with-git">With Git<a class="headerlink" href="#with-git" title="Permanent link">&para;</a></h3>
-<p>If you already have git on your system you can use,</p>
+<h4 id="with-git">With Git<a class="headerlink" href="#with-git" title="Permanent link">&para;</a></h4>
+<p>If you already have git on your system already you can use,</p>
 <div class="codehilite"><pre><span></span>git clone --depth <span class="m">1</span> https://github.com/tprasadtp/ubuntu-post-install.git <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ubuntu-post-install
 </pre></div>
 
-<h2 id="step-2-update-the-lists-to-suit-your-needs-optional">Step 2: Update the lists to suit your needs (Optional)<a class="headerlink" href="#step-2-update-the-lists-to-suit-your-needs-optional" title="Permanent link">&para;</a></h2>
-<p>Update the list files to suit your needs. Change PPAs, add or delete packages to list, tweak variables etc.
+<h2 id="step-2-update-the-lists-or-configyml-to-suit-your-needs-optional">Step 2: Update the lists or config.yml to suit your needs (Optional)<a class="headerlink" href="#step-2-update-the-lists-or-configyml-to-suit-your-needs-optional" title="Permanent link">&para;</a></h2>
+<p>Update the list or config files to suit your needs. Change PPAs, add or delete packages to list, tweak variables etc.
 Please see <a href="https://ae.prasadt.com/config/#package-lists">Configuration</a> &amp; <a href="https://ae.prasadt.com/tasks/#what-can-it-do">Tasks</a> for more details.</p>
 <h2 id="step-3-run-it">Step 3: Run it<a class="headerlink" href="#step-3-run-it" title="Permanent link">&para;</a></h2>
 <p>Run the script as <strong>root</strong>. You will get an error if you do not run the script as root.</p>
@@ -699,10 +699,13 @@ Please see <a href="https://ae.prasadt.com/config/#package-lists">Configuration<
 <p class="admonition-title">Tip</p>
 <p>Before you run the script, make sure that its executable.</p>
 </div>
-<div class="codehilite"><pre><span></span>sudo ./after-effects
+<div class="codehilite"><pre><span></span>sudo ./after-effects -Y -C &lt;your config.yml&gt;
 </pre></div>
 
-<details class="warning" open="open"><summary>Note for using this script inside docker containers</summary><ul><li>If you are running this in a docker container, you probably are root.</li><li>Its possible that you might be missing <code>sudo</code> package. So In that case just run it as <code>./after-effects</code>. Be warned! You probably are missing several dependencies of the script!</li></ul></details><h2 id="step-4-rejoice">Step 4: Rejoice<a class="headerlink" href="#step-4-rejoice" title="Permanent link">&para;</a></h2>
+<p>To use lists
+<div class="codehilite"><pre><span></span><span class="go">sudo ./after-effects -L</span>
+</pre></div></p>
+<details class="warning" open="open"><summary>Note for using this script inside docker containers</summary><ul><li>If you are running this in a docker container, you probably are root.</li><li>Its possible that you might be missing <code class="codehilite">sudo</code> package. So In that case just run it as <code class="codehilite">./after-effects</code>. Be warned! You probably are missing several dependencies of the script!</li></ul></details>
                 
                   
                 
@@ -793,7 +796,7 @@ Please see <a href="https://ae.prasadt.com/config/#package-lists">Configuration<
     
       <script src="../assets/javascripts/application.a59e2a89.js"></script>
       
-      <script>app.initialize({version:"0.17.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"0.17.5",url:{base:".."}})</script>
       
     
     

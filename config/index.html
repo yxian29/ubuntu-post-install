@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.4, mkdocs-material-2.9.1">
+      <meta name="generator" content="mkdocs-0.17.5, mkdocs-material-2.9.2">
     
     
       
@@ -230,6 +230,8 @@
     </li>
   
 
+      
+        
       
         
       
@@ -457,8 +459,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#package-lists" title="Package lists" class="md-nav__link">
-    Package lists
+  <a href="#configuration-using-lists" title="Configuration using  lists" class="md-nav__link">
+    Configuration using  lists
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yaml-file" title="YAML File" class="md-nav__link">
+    YAML File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automate" title="Automate" class="md-nav__link">
+    Automate
   </a>
   
 </li>
@@ -471,6 +487,18 @@
   
 </nav>
     
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../yaml/" title="Example Config YAML" class="md-nav__link">
+      Example Config YAML
+    </a>
   </li>
 
     
@@ -555,8 +583,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#package-lists" title="Package lists" class="md-nav__link">
-    Package lists
+  <a href="#configuration-using-lists" title="Configuration using  lists" class="md-nav__link">
+    Configuration using  lists
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yaml-file" title="YAML File" class="md-nav__link">
+    YAML File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automate" title="Automate" class="md-nav__link">
+    Automate
   </a>
   
 </li>
@@ -581,8 +623,8 @@
                 
                 
                 <h1 id="overview-of-configuration-files">Overview of Configuration files<a class="headerlink" href="#overview-of-configuration-files" title="Permanent link">&para;</a></h1>
-<p>This Script is designed to be flexible. Configurations live in directory <code>/data</code>. For each task containing the necessary data and are easy to configure for your needs.</p>
-<h2 id="package-lists">Package lists<a class="headerlink" href="#package-lists" title="Permanent link">&para;</a></h2>
+<p>This Script is designed to be flexible. Configurations live in directory <code class="codehilite">/data</code> &amp; sample YAML configurations are in <code class="codehilite">api</code>.</p>
+<h2 id="configuration-using-lists">Configuration using  lists<a class="headerlink" href="#configuration-using-lists" title="Permanent link">&para;</a></h2>
 <p>These files contain list of apt packages which can be installed. Please see <a href="../tasks/apt">Installing APT packages</a> for more information.</p>
 <table>
 <thead>
@@ -594,23 +636,8 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">linux-mint.list</td>
-<td align="left">Specific for Linux Mint</td>
-<td align="left">No</td>
-</tr>
-<tr>
-<td align="left">gnome-online-accounts.list</td>
-<td align="left">Specific for 16.04. For 17.04 and above use <code>goa.list</code></td>
-<td align="left">No</td>
-</tr>
-<tr>
 <td align="left">basic</td>
 <td align="left">List of packages which usually come pre-installed. Please don't add if you are not sure what you are doing.</td>
-<td align="left">No</td>
-</tr>
-<tr>
-<td align="left">github-bot-essentials.list</td>
-<td align="left">Project specific</td>
 <td align="left">No</td>
 </tr>
 <tr>
@@ -624,14 +651,9 @@
 <td align="left">Yes</td>
 </tr>
 <tr>
-<td align="left">exten-repo</td>
+<td align="left">extern</td>
 <td align="left">Packages from PPAs or External repositories. eg : Google Chrome, Spotify, Visual Studio Code, Google Cloud SDKs</td>
 <td align="left">No (But is added during Travis tests for supported releases)</td>
-</tr>
-<tr>
-<td align="left">goa</td>
-<td align="left">Gnome online accounts specific packages. These are necessary to get Gnome-Online-Accounts working properly in Empathy. Use only on 17.04 and above. For 16.04 use gnome-online-accounts</td>
-<td align="left">Yes</td>
 </tr>
 <tr>
 <td align="left">multimedia</td>
@@ -651,31 +673,6 @@
 <tr>
 <td align="left">utilities</td>
 <td align="left">Utilities and Tools</td>
-<td align="left">Yes except on debian.</td>
-</tr>
-<tr>
-<td align="left">wine</td>
-<td align="left">Wine related packages like winetricks</td>
-<td align="left">No (But is added during Travis tests for supported releases)</td>
-</tr>
-<tr>
-<td align="left">xenial-above</td>
-<td align="left">Packages are not available in Xenial or below in Ubuntu repositories, but are available in 16.10 and later.</td>
-<td align="left">No (But is added during Travis tests for supported releases)</td>
-</tr>
-<tr>
-<td align="left">latex</td>
-<td align="left">Latex related packages</td>
-<td align="left">Yes</td>
-</tr>
-<tr>
-<td align="left">pip.apt</td>
-<td align="left">Python 2 APT dependencies</td>
-<td align="left">Yes</td>
-</tr>
-<tr>
-<td align="left">pip3.apt</td>
-<td align="left">Python 3 APT dependencies</td>
 <td align="left">Yes</td>
 </tr>
 </tbody>
@@ -701,19 +698,19 @@
 <tr>
 <td align="left">purge</td>
 <td align="left">List of packages to be purged</td>
-<td align="left"><code>purge_not_required</code></td>
+<td align="left"><code class="codehilite">purge_not_required</code></td>
 <td align="left"><a href="../tasks/#purge-unwanted-packages">Link</a></td>
 </tr>
 <tr>
 <td align="left">ppa</td>
 <td align="left">List of ppas to be added</td>
-<td align="left"><code>add_ppas</code></td>
+<td align="left"><code class="codehilite">add_ppas</code></td>
 <td align="left"><a href="../tasks/#add-personal-package-archives-ppa">Link</a></td>
 </tr>
 <tr>
-<td align="left">deb-files</td>
-<td align="left">List of DEB files to be installed</td>
-<td align="left"><code>install_debs</code></td>
+<td align="left">deb</td>
+<td align="left">List of DEB files to be installed (csv)</td>
+<td align="left"><code class="codehilite">install_debs</code></td>
 <td align="left"><a href="../tasks/#install-debian-package-package-archives-deb-files">Link</a></td>
 </tr>
 <tr>
@@ -728,31 +725,40 @@
 <td align="left">_install_pip_packages</td>
 <td align="left"><a href="../tasks/#install-python-packages-via-pip">Link</a></td>
 </tr>
-<tr>
-<td align="left">pip-dep.apt</td>
-<td align="left">Any APT dependencies which might be required by pip packages</td>
-<td align="left"><a href="../tasks/#install-python-packages-via-pip">Link</a></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">pre-script</td>
-<td align="left">List of bash scripts to be run before any of the tasks begin</td>
-<td align="left">NA</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">post-script</td>
-<td align="left">List of scripts which can be run after all the tasks are completed</td>
-<td align="left">NA</td>
-<td align="left"></td>
-</tr>
 </tbody>
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>After you customize, might want to use simulate flag. <code>sudo ./after-effects -s</code></p>
+<p>After you customize, might want to use simulate flag. <code class="codehilite">sudo ./after-effects -s -L</code></p>
 </div>
-<details class="bug" open="open"><summary>Exceptions for packages in the list</summary><p>Some packages are not added or available for the some releases.</p><p><strong>Debian 8</strong></p><ul><li>timeshift nautilus-admin</li><li>utilities.list, xenial-above.list are not added or tested.</li></ul><p><strong>Debian 9</strong></p><ul><li>utilities.list is not added or tested.</li></ul><p><strong>Trusty</strong></p><ul><li>peek, kdeconnect-indicator PPAs</li><li>openjdk-8-jdk from development.list</li><li>gnome-calendar, gnome-todo, polari from productivity.list</li><li>indicator-kdeconnect, peek, yubikey-manager-qt from extern-repo.list</li><li>xenial-above.list is not added or tested.</li></ul></details>
+<h2 id="yaml-file">YAML File<a class="headerlink" href="#yaml-file" title="Permanent link">&para;</a></h2>
+<p>The script can fetch data from remote default remote endpoint or the one mentioned via --api-endpoint. This file or API response is in yaml. It contains following details.</p>
+<ul>
+<li>Script version, Config version ,if script is blacklisted, if so which release to fallback to. JSON data is available via <code class="codehilite">/api/json/</code>.</li>
+<li>Some flags and features mentioned in the script can be overridden remotely.</li>
+<li>Remote configuration is displayed as <code class="codehilite">[  R-Config  ]</code> in the logs and on the screen.</li>
+<li>Use a simple node or any other server which returns a valid configuration in <code class="codehilite">yaml</code> based on a query string appended to api-endpoint.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Use local file</p>
+<ul>
+<li>If you are testing, it might be a good idea to use a local file which holds this configuration data. In that  case use <code class="codehilite">-C &lt;filename&gt;</code> option.</li>
+<li>After you customize, might want to use simulate flag. <code class="codehilite">sudo ./after-effects -s -C config.yml -Y</code></li>
+</ul>
+</div>
+<h2 id="automate">Automate<a class="headerlink" href="#automate" title="Permanent link">&para;</a></h2>
+<p>Setting <code class="codehilite">&quot;AUTOPILOT=true&quot;</code> will run all the tasks specified in the YAML file, or if <code class="codehilite">-L</code> list option is used, then all tasks are run in following order</p>
+<ol>
+<li>Update</li>
+<li>Upgrade</li>
+<li>Add Reposiories</li>
+<li>Add PPAs [if supported]</li>
+<li>Install packages</li>
+<li>Install DEB packages</li>
+<li>Install Python2 Modules</li>
+<li>Install Python 3 Modules</li>
+<li>Purge unwanted Packages</li>
+</ol>
                 
                   
                 
@@ -788,13 +794,13 @@
           </a>
         
         
-          <a href="../logs/" title="Logs" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../yaml/" title="Example Config YAML" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Logs
+                Example Config YAML
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -843,7 +849,7 @@
     
       <script src="../assets/javascripts/application.a59e2a89.js"></script>
       
-      <script>app.initialize({version:"0.17.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"0.17.5",url:{base:".."}})</script>
       
     
     

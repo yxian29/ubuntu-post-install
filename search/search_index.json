@@ -487,7 +487,7 @@
         }, 
         {
             "location": "/privacy/", 
-            "text": "Privacy Policy\n\n\nOur privacy policy related to website is available \nhere\n.\n\n\nAnonymous stats collection\n\n\n!!! info\n    Your passwords, usernames, environment variables or anything sensitive is not collected.\n\n\nThe script \nafter-effects\n collects anonymous usage statistics. The following might be collected.\n\n\n\n\nRandomized UUID generated per run.\n\n\nLast exit code.\n\n\nSystem Architecture (x64/x86/ARM/ARM64).\n\n\nAmount of RAM \n CPU Model\n\n\nNumber of GPU \n GPU Vendor\n\n\nTotal execution time.\n\n\nDistribution name (Ubuntu, Linux Mint etc.)\n\n\nDistribution code name (bionic, artful etc)\n\n\nFeature/Task selected.\n\n\nFlags used.\n\n\nTimezone and system language.\n\n\nHost-name.\n\n\n\n\n\n\nTip\n\n\n\n\nNo personally identifiable information is collected or reported back.\n\n\nThis feature can be disabled via \n--no-stats\n flag.\n\n\n\n\n\n\nAdditional note for sigma users\n\n\nNote This applies ONLY if you are using the script from my git server. This does NOT APPLY for any GitHub branches/tags/releases.\n\n\n\n\nCurrently Github branches do not report stats and it is just a placeholder.\n\n\nIf you are using the script from my git server, stats are reported unless you disable them. UUID is \nNOT\n random for each run and is based on MAC address of one of your Ethernet devices.(If you have many)\n\n\nScripts have same version number and are in sync with Github. You can identify the difference by looking at REL_NAME. It has \n-sigma", 
+            "text": "Privacy Policy\n\n\nOur privacy policy related to website is available \nhere\n.\n\n\nAnonymous stats collection\n\n\n!!! info\n    Your passwords, usernames, environment variables or anything sensitive is not collected.\n\n\nThe script \nafter-effects\n collects anonymous usage statistics. The following might be collected.\n\n\n\n\nRandomized UUID generated per run.\n\n\nLast exit code.\n\n\nSystem Architecture (x64/x86/ARM/ARM64).\n\n\nAmount of RAM \n CPU Model\n\n\nNumber of GPU \n GPU Vendor\n\n\nTotal execution time.\n\n\nDistribution name (Ubuntu, Linux Mint etc.)\n\n\nDistribution code name (bionic, artful etc)\n\n\nFeature/Task selected.\n\n\nFlags used.\n\n\nTimezone and system language.\n\n\nHost-name.\n\n\n\n\n\n\nTip\n\n\n\n\nNo personally identifiable information is collected or reported back.\n\n\nThis feature can be disabled via \n--no-stats\n flag.", 
             "title": "Privacy Policy"
         }, 
         {
@@ -499,11 +499,6 @@
             "location": "/privacy/#anonymous-stats-collection", 
             "text": "!!! info\n    Your passwords, usernames, environment variables or anything sensitive is not collected.  The script  after-effects  collects anonymous usage statistics. The following might be collected.   Randomized UUID generated per run.  Last exit code.  System Architecture (x64/x86/ARM/ARM64).  Amount of RAM   CPU Model  Number of GPU   GPU Vendor  Total execution time.  Distribution name (Ubuntu, Linux Mint etc.)  Distribution code name (bionic, artful etc)  Feature/Task selected.  Flags used.  Timezone and system language.  Host-name.    Tip   No personally identifiable information is collected or reported back.  This feature can be disabled via  --no-stats  flag.", 
             "title": "Anonymous stats collection"
-        }, 
-        {
-            "location": "/privacy/#additional-note-for-sigma-users", 
-            "text": "Note This applies ONLY if you are using the script from my git server. This does NOT APPLY for any GitHub branches/tags/releases.   Currently Github branches do not report stats and it is just a placeholder.  If you are using the script from my git server, stats are reported unless you disable them. UUID is  NOT  random for each run and is based on MAC address of one of your Ethernet devices.(If you have many)  Scripts have same version number and are in sync with Github. You can identify the difference by looking at REL_NAME. It has  -sigma", 
-            "title": "Additional note for sigma users"
         }
     ]
 }

@@ -680,14 +680,14 @@
 <h2 id="install-ubuntu">Install Ubuntu<a class="headerlink" href="#install-ubuntu" title="Permanent link">&para;</a></h2>
 <p>Install (if you haven't already) your choice of Ubuntu/Derivative as you would( If you wish to automate that too, you can use preseed.cfg file)</p>
 <h2 id="step-1-get-the-script">Step 1: Get the script<a class="headerlink" href="#step-1-get-the-script" title="Permanent link">&para;</a></h2>
-<h4 id="without-git">Without Git<a class="headerlink" href="#without-git" title="Permanent link">&para;</a></h4>
+<h3 id="without-git">Without Git<a class="headerlink" href="#without-git" title="Permanent link">&para;</a></h3>
 <p>Run this in Terminal</p>
 <div class="codehilite"><pre><span></span><span class="go">wget -Nnv https://raw.githubusercontent.com/tprasadtp/ubuntu-post-install/master/get-after-effects.sh -O - | bash</span>
 </pre></div>
 
-<h4 id="with-git">With Git<a class="headerlink" href="#with-git" title="Permanent link">&para;</a></h4>
+<h3 id="with-git">With Git<a class="headerlink" href="#with-git" title="Permanent link">&para;</a></h3>
 <p>If you already have git on your system already you can use,</p>
-<div class="codehilite"><pre><span></span>git clone --depth <span class="m">1</span> https://github.com/tprasadtp/ubuntu-post-install.git <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ubuntu-post-install
+<div class="codehilite"><pre><span></span><span class="go">git clone --depth 1 https://github.com/tprasadtp/ubuntu-post-install.git &amp;&amp; cd ubuntu-post-install</span>
 </pre></div>
 
 <h2 id="step-2-update-the-lists-or-configyml-to-suit-your-needs-optional">Step 2: Update the lists or config.yml to suit your needs (Optional)<a class="headerlink" href="#step-2-update-the-lists-or-configyml-to-suit-your-needs-optional" title="Permanent link">&para;</a></h2>
@@ -699,12 +699,13 @@ Please see <a href="https://ae.prasadt.com/config/#package-lists">Configuration<
 <p class="admonition-title">Tip</p>
 <p>Before you run the script, make sure that its executable.</p>
 </div>
-<div class="codehilite"><pre><span></span>sudo ./after-effects -Y -C &lt;your config.yml&gt;
+<div class="codehilite"><pre><span></span><span class="go">  sudo ./after-effects -Y -C &lt;your config.yml&gt;</span>
 </pre></div>
 
-<p>To use lists
+<p>To use lists</p>
 <div class="codehilite"><pre><span></span><span class="go">sudo ./after-effects -L</span>
-</pre></div></p>
+</pre></div>
+
 <details class="warning" open="open"><summary>Note for using this script inside docker containers</summary><ul><li>If you are running this in a docker container, you probably are root.</li><li>Its possible that you might be missing <code class="codehilite">sudo</code> package. So In that case just run it as <code class="codehilite">./after-effects</code>. Be warned! You probably are missing several dependencies of the script!</li></ul></details>
                 
                   

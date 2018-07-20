@@ -525,6 +525,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#version" title="Version" class="md-nav__link">
+    Version
+  </a>
+  
+</li>
+      
       
       
       
@@ -743,6 +750,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#version" title="Version" class="md-nav__link">
+    Version
+  </a>
+  
+</li>
+      
       
       
       
@@ -766,14 +780,18 @@
 <h2 id="configuration-type">Configuration type<a class="headerlink" href="#configuration-type" title="Permanent link">&para;</a></h2>
 <p>You have two options of configuring this script.</p>
 <ol>
-<li>using .list files in <code class="codehilite">data</code>
-  <div class="codehilite"><pre><span></span><span class="go">  ./after-effects --lists</span>
-</pre></div></li>
-<li>Using YAML files [they can be local or remote]
-  <div class="codehilite"><pre><span></span><span class="go">  ./after-effects --yaml</span>
-</pre></div>
-You need to specify which type to use. Not specifying will throw an error. You cannot mix configurations in YAML and lists.</li>
+<li>using .list files in <code class="codehilite">data</code></li>
 </ol>
+<div class="codehilite"><pre><span></span><span class="go">  ./after-effects --lists</span>
+</pre></div>
+
+<ol>
+<li>Using YAML files [they can be local or remote]</li>
+</ol>
+<div class="codehilite"><pre><span></span><span class="go">  ./after-effects --yaml</span>
+</pre></div>
+
+<p>You need to specify which type to use. Not specifying will throw an error. You cannot mix configurations in YAML and lists.</p>
 <div class="admonition tip">
 <p class="admonition-title">Shorthand flags</p>
 <p>You can also use short hand version of the flags <code class="codehilite">-Y</code> for YAML and <code class="codehilite">-L</code> for lists. Please note that lowercase case options have different meaning than uppercase ones.</p>
@@ -781,11 +799,13 @@ You need to specify which type to use. Not specifying will throw an error. You c
 <h2 id="simulating-package-installation">Simulating package installation<a class="headerlink" href="#simulating-package-installation" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>
-<p><div class="codehilite"><pre><span></span><span class="go">./after-effects -s</span>
+<div class="codehilite"><pre><span></span><span class="go">./after-effects -s</span>
 </pre></div>
-OR
+
+<p>OR</p>
 <div class="codehilite"><pre><span></span><span class="go">./after-effects --simulate</span>
-</pre></div></p>
+</pre></div>
+
 </div>
 <details class="tip"><summary>This flag/option applies to following tasks</summary><ul><li>Installing apt packages.</li><li>Installing Debian package archives (DEBs).</li><li>Installing Python packages.</li><li>Upgrading system packages.</li><li>Purging unwanted packages.</li></ul></details><p>Following details should explain the behavior of this flag. Please do have a look at exceptions, as all tasks cannot be simulated.</p>
 <ul>
@@ -807,11 +827,13 @@ OR
 <h2 id="fix-for-latest-ubuntu-releases">Fix for latest Ubuntu releases<a class="headerlink" href="#fix-for-latest-ubuntu-releases" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>
-<p><div class="codehilite"><pre><span></span><span class="go">./after-effects -f</span>
+<div class="codehilite"><pre><span></span><span class="go">./after-effects -f</span>
 </pre></div>
-OR
+
+<p>OR</p>
 <div class="codehilite"><pre><span></span><span class="go">./after-effects --fix</span>
-</pre></div></p>
+</pre></div>
+
 </div>
 <details class="tip"><summary>This flag/option applies to following repositories</summary><ul><li>Google Cloud SDK</li><li>GCSFUSE</li><li>InSync</li><li>Docker Community Edition</li><li>Wine HQ</li></ul></details><p>Usually it takes a while for additional Repositories (Docker, Google Cloud SDK etc) to add support for latest release of Ubuntu. However we can use the previous release for which packages are available. So, using packages built for previous release works fine most of the time. This is also good fix if you are running a alpha or beta release of Ubuntu.</p>
 <ul>
@@ -830,21 +852,25 @@ OR
 <details class="danger"><summary>Note for Pre-Release/ development version of Ubuntu</summary><ul><li>If you are using a pre-release version of Ubuntu, you can use <code class="codehilite">--pre-release</code> flag to apply the above mentioned fix to pre-release version of Ubuntu.</li><li>This flag can be used independent of <code class="codehilite">--fix</code>. If both are used together then both flags will be applied if the release is upcoming-release.</li><li>If the release is stable, only <code class="codehilite">--fix</code> flag will be valid and <code class="codehilite">--pre-release</code> is ignored.</li><li>This is how it works:  If the repositories are  not available for latest stable release as well, go back a release. Ex. If the pre-release is 18.04 and the repositories is not available for 17.10 as well, we use 17.04 repositories. Usually happens in first few days of development cycle of 18.04.</li></ul></details><h2 id="skip-confirmation-prompts">Skip confirmation prompts<a class="headerlink" href="#skip-confirmation-prompts" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>
-<p><div class="codehilite"><pre><span></span><span class="go">./after-effects -y</span>
+<div class="codehilite"><pre><span></span><span class="go">./after-effects -y</span>
 </pre></div>
-OR
+
+<p>OR</p>
 <div class="codehilite"><pre><span></span><span class="go">./after-effects --yes</span>
-</pre></div></p>
+</pre></div>
+
 </div>
 <p>From v3.0 onward, you will be asked for confirmation before performing the task selected. If you would like to bypass this on a CI environments like TRAVIS or for any other reason, you can do so by running the script with <code class="codehilite">sudo ./after-effects -y</code> or <code class="codehilite">sudo ./after-effects --yes</code></p>
 <h2 id="purge-not-required-packages">Purge not required packages<a class="headerlink" href="#purge-not-required-packages" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>
-<p><div class="codehilite"><pre><span></span><span class="go">./after-effects -d</span>
+<div class="codehilite"><pre><span></span><span class="go">./after-effects -d</span>
 </pre></div>
-OR
+
+<p>OR</p>
 <div class="codehilite"><pre><span></span><span class="go">./after-effects --deboalt</span>
-</pre></div></p>
+</pre></div>
+
 </div>
 <p>Usually Ubuntu comes with some pre-installed games, packages which you sometimes do not need. This option is a switch to used in purging these packages mentioned in the subsequent sections. Since it is possible that user might purge necessary packages like sudo or other core system components, these just acts like a barrier from accidentally doing so.</p>
 <div class="admonition warning">
@@ -857,11 +883,13 @@ OR
 <h2 id="delete-log-file">Delete log file<a class="headerlink" href="#delete-log-file" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>
-<p><div class="codehilite"><pre><span></span><span class="go">./after-effects -l</span>
+<div class="codehilite"><pre><span></span><span class="go">./after-effects -l</span>
 </pre></div>
-OR
+
+<p>OR</p>
 <div class="codehilite"><pre><span></span><span class="go">./after-effects --delete-log</span>
-</pre></div></p>
+</pre></div>
+
 </div>
 <p>Just a quick way to delete logs generated by this script.</p>
 <div class="admonition warning">
@@ -871,11 +899,13 @@ OR
 <h2 id="keep-downloaded-deb-files">Keep downloaded DEB files<a class="headerlink" href="#keep-downloaded-deb-files" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>
-<p><div class="codehilite"><pre><span></span><span class="go">./after-effects -k</span>
+<div class="codehilite"><pre><span></span><span class="go">./after-effects -k</span>
 </pre></div>
-OR
+
+<p>OR</p>
 <div class="codehilite"><pre><span></span><span class="go">./after-effects --keep-debs</span>
-</pre></div></p>
+</pre></div>
+
 </div>
 <p>Keeps packages cached by APT and downloaded DEB packages.
 Default behavior is to clean apt cache and delete downloaded DEB packages.</p>
@@ -894,42 +924,50 @@ Default behavior is to clean apt cache and delete downloaded DEB packages.</p>
 <h2 id="prefer-local-lists">Prefer Local lists<a class="headerlink" href="#prefer-local-lists" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>
-<p><div class="codehilite"><pre><span></span><span class="go">./after-effects -L</span>
+<div class="codehilite"><pre><span></span><span class="go">./after-effects -L</span>
 </pre></div>
-OR
+
+<p>OR</p>
 <div class="codehilite"><pre><span></span><span class="go">./after-effects --lists</span>
-</pre></div></p>
+</pre></div>
+
 </div>
 <p>Using this option, you can chose to use the lists file which you have locally and not worry about YAML and shit.</p>
 <h2 id="use-custom-configuration-file">Use Custom Configuration file<a class="headerlink" href="#use-custom-configuration-file" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>
-<p><div class="codehilite"><pre><span></span><span class="go">./after-effects --config-file &lt;filename&gt;</span>
+<div class="codehilite"><pre><span></span><span class="go">./after-effects --config-file &lt;filename&gt;</span>
 </pre></div>
-OR
+
+<p>OR</p>
 <div class="codehilite"><pre><span></span><span class="go">./after-effects -C &lt;filename&gt;</span>
-</pre></div></p>
+</pre></div>
+
 </div>
 <p>You can prefer using custom configuration file you have stored locally [It should be available via local paths or network share. not via ftp or http]. Enabling this option will disable fetching configuration from api-endpoints mentioned or default endpoints.</p>
 <h2 id="use-custom-version-information-file">Use Custom Version information file<a class="headerlink" href="#use-custom-version-information-file" title="Permanent link">&para;</a></h2>
 <p>Script always checks if its running the latest version available. If not it throws an error and exits. If you wish to skip that, please use <code class="codehilite">--no-version-check</code>. This is always recommended over using a custom version information file. However it is possible to provide a custom version info file, a YAML file which holds version information.</p>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>
-<p><div class="codehilite"><pre><span></span><span class="go">./after-effects --version-file &lt;filename&gt;</span>
+<div class="codehilite"><pre><span></span><span class="go">./after-effects --version-file &lt;filename&gt;</span>
 </pre></div>
-OR
+
+<p>OR</p>
 <div class="codehilite"><pre><span></span><span class="go">./after-effects -V &lt;filename&gt;</span>
-</pre></div></p>
+</pre></div>
+
 </div>
 <p>Example version files are in <code class="codehilite">api</code> directory. All the fields are mandatory.</p>
 <h2 id="do-not-report-statistics">Do not report statistics<a class="headerlink" href="#do-not-report-statistics" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>
-<p><div class="codehilite"><pre><span></span><span class="go">./after-effects --no-stats</span>
+<div class="codehilite"><pre><span></span><span class="go">./after-effects --no-stats</span>
 </pre></div>
-OR
+
+<p>OR</p>
 <div class="codehilite"><pre><span></span><span class="go">./after-effects -S</span>
-</pre></div></p>
+</pre></div>
+
 </div>
 <p>Disables reporting statistics back to server.</p>
 <p>Following things are reported. (Nothing more than that)</p>
@@ -949,13 +987,16 @@ OR
 </ul>
 <details class="question"><summary>Privacy Concerns?</summary><ul><li>If you are freaking out, its a shell script !! You can literally look into it and check what's collected. Why if you ask? I mostly use it on a bunch of machines/VMs and would like to keep an eye on how it did.</li><li>Data will be stored in AWS DynamoDB and Google Firebase Real-time Database.
 Data will not be shared with any third party. Period. Only me or my team members will have access
-to it. If you run a search query on google, it probably collects more data than me. API endpoints may log your IP addresses but script does not and WILL not collect IP addresses. (Github, Google and AWS).</li><li>If you flood the reporting endpoints, you might get HTTP 429 errors as reporting endpoints have rate limits. Script will exit with code 59.</li></ul></details><div class="admonition snippet">
+to it. If you run a search query on google, it probably collects more data than me. API endpoints may log your IP addresses but script does not and WILL not collect IP addresses. (Github, Google and AWS).</li><li>If you flood the reporting endpoints, you might get HTTP 429 errors as reporting endpoints have rate limits. Script will exit with code 59.</li></ul></details><h2 id="version">Version<a class="headerlink" href="#version" title="Permanent link">&para;</a></h2>
+<div class="admonition snippet">
 <p class="admonition-title">Usage</p>
-<p><div class="codehilite"><pre><span></span><span class="go">./after-effect -v</span>
+<div class="codehilite"><pre><span></span><span class="go">./after-effect -v</span>
 </pre></div>
-OR
+
+<p>OR</p>
 <div class="codehilite"><pre><span></span><span class="go">./after-effects --version</span>
-</pre></div></p>
+</pre></div>
+
 </div>
 <p>This will display version info. You do not have to be root to run this. For all the other tasks you need to be root or use sudo.</p>
                 

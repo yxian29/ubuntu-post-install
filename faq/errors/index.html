@@ -660,10 +660,11 @@ You might see ans error like this,</p>
 </pre></div>
 
 <h2 id="ssl-errors">SSL Errors<a class="headerlink" href="#ssl-errors" title="Permanent link">&para;</a></h2>
-<p><div class="codehilite"><pre><span></span><span class="go">[     Error!    ] Something went wrong while retrieving /tmp/api-version.yml.</span>
+<div class="codehilite"><pre><span></span><span class="go">[     Error!    ] Something went wrong while retrieving /tmp/api-version.yml.</span>
 <span class="go">[     Error!    ] Error Getting file.</span>
 </pre></div>
-Try running wget <a href="https://ae.prasadt.com/api/version.yml">https://ae.prasadt.com/api/version.yml</a>. If you see SSL errors, that means that your CA bundle is out of date.
+
+<p>Try running <code class="codehilite">wget https://ae.prasadt.com/api/version.yml</code>. If you see SSL errors, that means that your CA bundle is out of date.
 This project uses Amazon Root CA &amp; LetsEncrypt for SSL, make sure that your System trusts these.</p>
                 
                   

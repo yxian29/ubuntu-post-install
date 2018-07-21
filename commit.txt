@@ -1,3 +1,5 @@
-SRC Commit ID  : 803de82
-SRC Message    : Bump Version to 5.0.1
+SRC Commit ID  : da64532
+SRC Message    : Merge pull request #13 from tprasadtp/gist-support
+
+Support configuration saved as Gist or available at any URL
 Built from     : master

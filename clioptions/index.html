@@ -519,6 +519,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#remote-yaml-configuration-file" title="Remote YAML configuration file" class="md-nav__link">
+    Remote YAML configuration file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#do-not-report-statistics" title="Do not report statistics" class="md-nav__link">
     Do not report statistics
   </a>
@@ -744,6 +751,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#remote-yaml-configuration-file" title="Remote YAML configuration file" class="md-nav__link">
+    Remote YAML configuration file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#do-not-report-statistics" title="Do not report statistics" class="md-nav__link">
     Do not report statistics
   </a>
@@ -944,7 +958,7 @@ Default behavior is to clean apt cache and delete downloaded DEB packages.</p>
 </pre></div>
 
 </div>
-<p>You can prefer using custom configuration file you have stored locally [It should be available via local paths or network share. not via ftp or http]. Enabling this option will disable fetching configuration from api-endpoints mentioned or default endpoints.</p>
+<p>You can prefer using custom configuration file you have stored locally [It should be available via local paths or network share. not via ftp or http]. Enabling this option will disable fetching remote configuration even if you have specified <code class="codehilite">--remote-yaml</code></p>
 <h2 id="use-custom-version-information-file">Use Custom Version information file<a class="headerlink" href="#use-custom-version-information-file" title="Permanent link">&para;</a></h2>
 <p>Script always checks if its running the latest version available. If not it throws an error and exits. If you wish to skip that, please use <code class="codehilite">--no-version-check</code>. This is always recommended over using a custom version information file. However it is possible to provide a custom version info file, a YAML file which holds version information.</p>
 <div class="admonition snippet">
@@ -958,6 +972,18 @@ Default behavior is to clean apt cache and delete downloaded DEB packages.</p>
 
 </div>
 <p>Example version files are in <code class="codehilite">api</code> directory. All the fields are mandatory.</p>
+<h2 id="remote-yaml-configuration-file">Remote YAML configuration file<a class="headerlink" href="#remote-yaml-configuration-file" title="Permanent link">&para;</a></h2>
+<div class="admonition snippet">
+<p class="admonition-title">Usage</p>
+<div class="codehilite"><pre><span></span><span class="go">./after-effects --remote-yaml &lt;URL to YAML file&gt;</span>
+</pre></div>
+
+<p>OR</p>
+<div class="codehilite"><pre><span></span><span class="go">./after-effects -R &lt;URL to YAML file&gt;</span>
+</pre></div>
+
+</div>
+<p>You can specify YAML file to use. Script will fetch it and parse it. Please note that local Config file specified takes priority over <code class="codehilite">-R</code>. If both -C &amp; -R are used, only local config file is considered. The file should be available without any soft of interactive logins.</p>
 <h2 id="do-not-report-statistics">Do not report statistics<a class="headerlink" href="#do-not-report-statistics" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>

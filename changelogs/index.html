@@ -734,8 +734,7 @@
 <li>ARM support for some repositories. (not all repos support ARM)</li>
 <li>Move .redirects data to netlify toml</li>
 <li>Groundwork to move to parser written in Go</li>
-<li>YAML provides more configuration options. Individual repos &amp;
-tasks can now be controlled via YAML file.</li>
+<li>YAML provides more configuration options. Individual repos &amp; tasks can now be controlled via YAML file.</li>
 </ul>
 <h2 id="version-40">Version 4.0<a class="headerlink" href="#version-40" title="Permanent link">&para;</a></h2>
 <ul>
@@ -793,34 +792,22 @@ tasks can now be controlled via YAML file.</li>
 <li>Allow Bionic tests to fail on Travis CI.</li>
 <li>Dockerfiles &amp; tests for bionic.</li>
 <li>Inform in script if running on Upcoming release.</li>
-<li>Drop google-cloud-sdk from fixreponotavailable. Use <code class="codehilite">--pre-release</code>
-if using beta/alpha Ubuntu release.</li>
+<li>Drop google-cloud-sdk from fix_repo_not_available. Use <code class="codehilite">--pre-release</code> if using beta/alpha Ubuntu release.</li>
 <li>Add Visual studio to repos instead of deb files</li>
 <li>Rename logging directory to after-effects</li>
 </ul>
 <h2 id="version-30">Version 3.0<a class="headerlink" href="#version-30" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>Add Confirmation dialog using whiptail for Actions like Adding PPA,
-Repositories, Installing Apps, and Deb files</p>
+<p>Add Confirmation dialog using whiptail for Actions like Adding PPA, Repositories, Installing Apps, and Deb files</p>
 </li>
 <li>
-<p>Provide an option via command line to bypass the confirmation dialog
-for ci and automated environments or when its too annoying</p>
+<p>Provide an option via command line to bypass the confirmation dialog for ci and automated environments or when its too annoying</p>
 </li>
-<li>
-<p>If the simulate option is selected then Only calculate
-the upgrade but do not perform upgrade.</p>
-</li>
-<li>
-<p>Added improved Simulate options. Helpful when just want to change
-  somethings and test scripts without really downloading and installing packages</p>
-</li>
-<li>Simulate option is by default false and can be toggled by passing
-  <code class="codehilite">-s</code> or <code class="codehilite">--simulate</code> while running the script via command line</li>
-<li>Do not Enable Canonical Partner repositories in Ubuntu derivatives as
-  they are enabled in installer or are different than Ubuntu.
-  This leaves Partner repositories as they were before</li>
+<li>If the simulate option is selected then Only calculate the upgrade but do not perform upgrade.</li>
+<li>Added improved Simulate options. Helpful when just want to change somethings and test scripts without really downloading and installing packages</li>
+<li>Simulate option is by default false and can be toggled by passing <code class="codehilite">-s</code> or <code class="codehilite">--simulate</code> while running the script via command line</li>
+<li>Do not Enable Canonical Partner repositories in Ubuntu derivatives as they are enabled in installer or are different than Ubuntu. This leaves Partner repositories as they were before</li>
 <li>Add Feature: Purge Unwanted Packages</li>
 <li>Improved logging . Redirecting errors and adding time-stamps works better.</li>
 <li>Travis CI and Docker Testing</li>
@@ -833,8 +820,7 @@ the upgrade but do not perform upgrade.</p>
 <li>Flexible with packages and deb files</li>
 <li>Reduced complex dependencies</li>
 <li>Easy to configure</li>
-<li>Add Simulate install option for installing deb files and apps.
-Easier to test scripts now .</li>
+<li>Add Simulate install option for installing deb files and apps. Easier to test scripts now .</li>
 </ul>
 <h2 id="version-10">Version 1.0<a class="headerlink" href="#version-10" title="Permanent link">&para;</a></h2>
 <ul>

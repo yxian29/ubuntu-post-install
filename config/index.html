@@ -619,49 +619,36 @@
 <tr>
 <th align="left">File</th>
 <th align="left">Contents</th>
-<th align="left">Present in app-list</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">basic</td>
-<td align="left">List of packages which usually come pre-installed. Please don't add if you are not sure what you are doing.</td>
-<td align="left">No</td>
-</tr>
-<tr>
 <td align="left">administration</td>
 <td align="left">Administration Tools like Synaptic</td>
-<td align="left">Yes</td>
 </tr>
 <tr>
 <td align="left">development</td>
-<td align="left">Used for development tasks eg: rake</td>
-<td align="left">Yes</td>
+<td align="left">Used for development tasks eg: ruby</td>
 </tr>
 <tr>
-<td align="left">extern</td>
+<td align="left">external</td>
 <td align="left">Packages from PPAs or External repositories. eg : Google Chrome, Spotify, Visual Studio Code, Google Cloud SDKs</td>
-<td align="left">No (But is added during Travis tests for supported releases)</td>
 </tr>
 <tr>
 <td align="left">multimedia</td>
 <td align="left">Tools to edit photos and videos, video players and editors.</td>
-<td align="left">Yes</td>
 </tr>
 <tr>
 <td align="left">productivity</td>
 <td align="left">Email, Chat, Office tools, Document converters etc.</td>
-<td align="left">Yes</td>
 </tr>
 <tr>
 <td align="left">security</td>
 <td align="left">Security related tools</td>
-<td align="left">Yes</td>
 </tr>
 <tr>
 <td align="left">utilities</td>
 <td align="left">Utilities and Tools</td>
-<td align="left">Yes</td>
 </tr>
 </tbody>
 </table>
@@ -720,12 +707,11 @@
 <p>After you customize, might want to use simulate flag. <code class="codehilite">sudo ./after-effects -s -L</code></p>
 </div>
 <h2 id="yaml-file">YAML File<a class="headerlink" href="#yaml-file" title="Permanent link">&para;</a></h2>
-<p>The script can fetch data from remote default remote endpoint or the one mentioned via --api-endpoint. This file or API response is in yaml. It contains following details.</p>
+<p>The script can fetch remote YAML data from given url. Use <code class="codehilite">--remote-yaml</code> URL If you want to use a local config file, use <code class="codehilite">--config-file FILENAME</code> It contains following details.</p>
 <ul>
-<li>Script version, Config version ,if script is blacklisted, if so which release to fallback to. JSON data is available via <code class="codehilite">/api/json/</code>.</li>
-<li>Some flags and features mentioned in the script can be overridden remotely.</li>
-<li>Remote configuration is displayed as <code class="codehilite">[  R-Config  ]</code> in the logs and on the screen.</li>
-<li>Use a simple node or any other server which returns a valid configuration in <code class="codehilite">yaml</code> based on a query string appended to api-endpoint.</li>
+<li>If you specify a an option via command line and provide config file which has conflicting option, Config file takes precedence.</li>
+<li>Remote configuration is displayed as <code class="codehilite">[  R-Config  ]</code> in the logs and on the screen. To hide it use <code class="codehilite">--hide-config</code></li>
+<li>Check <a href="../yaml/#yaml-config">Sample YAML</a> configuration file <a href="../yaml/#yaml-config">here.</a></li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Use local file</p>

@@ -1,10 +1,3 @@
-SRC Commit ID  : 1470b86
-SRC Message    : replace `/` and `.` in test script urls with hyphens to avoid build failures (#14)
-
-* replace `/` and `.` in urls with hyphens to avoid build failure
-* replace - and / in config url in pre-release test script
-* update readme to include logos
-* combine pages
-* some tweaks to docs
-* readme to include supported tasks
+SRC Commit ID  : c644a07
+SRC Message    : remove unused variable
 Built from     : master

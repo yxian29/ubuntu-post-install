@@ -42,7 +42,7 @@
     
     
       
-        <title>Errors - Documentaion for After Effects</title>
+        <title>Errors & Issues - Documentaion for After Effects</title>
       
     
     
@@ -130,7 +130,7 @@
                 Documentaion for After Effects
               </span>
               <span class="md-header-nav__topic">
-                Errors
+                Errors & Issues
               </span>
             
           
@@ -359,8 +359,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../distros/" title="Supported" class="md-nav__link">
-      Supported
+    <a href="../distros/" title="Distros" class="md-nav__link">
+      Distros
     </a>
   </li>
 
@@ -380,11 +380,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Errors
+        Errors & Issues
       </label>
     
-    <a href="./" title="Errors" class="md-nav__link md-nav__link--active">
-      Errors
+    <a href="./" title="Errors & Issues" class="md-nav__link md-nav__link--active">
+      Errors & Issues
     </a>
     
       
@@ -418,6 +418,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#script-throws-a-bunch-of-errors-or-got-struck-or-hangs" title="Script throws a bunch of errors or got struck or hangs" class="md-nav__link">
+    Script throws a bunch of errors or got struck or hangs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-recover" title="How to recover" class="md-nav__link">
+    How to recover
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issues-not-mentioned-above" title="Issues not mentioned above?" class="md-nav__link">
+    Issues not mentioned above?
+  </a>
+  
+</li>
+      
       
       
       
@@ -437,18 +464,6 @@
   <li class="md-nav__item">
     <a href="../linuxmint/" title="Linux Mint" class="md-nav__link">
       Linux Mint
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../crash/" title="Crashes" class="md-nav__link">
-      Crashes
     </a>
   </li>
 
@@ -607,6 +622,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#script-throws-a-bunch-of-errors-or-got-struck-or-hangs" title="Script throws a bunch of errors or got struck or hangs" class="md-nav__link">
+    Script throws a bunch of errors or got struck or hangs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-recover" title="How to recover" class="md-nav__link">
+    How to recover
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issues-not-mentioned-above" title="Issues not mentioned above?" class="md-nav__link">
+    Issues not mentioned above?
+  </a>
+  
+</li>
+      
       
       
       
@@ -648,7 +690,7 @@ You might see ans error like this,</p>
 </pre></div>
 
 <ul>
-<li>It means that you do not have <em>lsb-release</em> package installed. It happens usually on docker containers. See <a href="#what-are-its-dependencies-what-do-i-need-on-my-system-to-run-this">What are its dependencies? What do I need on my system to run this?</a></li>
+<li>It means that you do not have <em>lsb-release</em> package installed. It happens usually on docker containers. See <a href="../../faq/dependencies/#what-do-i-need-to-run-this">What are its dependencies? What do I need on my system to run this?</a></li>
 <li>Install <code class="codehilite">lsb-release</code> package using <code class="codehilite">apt-get -y install lsb-release</code></li>
 <li>In the case above you are probably missing other dependencies as well. It might be a good idea to install those dependencies first.</li>
 </ul>
@@ -666,6 +708,23 @@ You might see ans error like this,</p>
 
 <p>Try running <code class="codehilite">wget https://ae.prasadt.com/api/version.yml</code>. If you see SSL errors, that means that your CA bundle is out of date.
 This project uses Amazon Root CA &amp; LetsEncrypt for SSL, make sure that your System trusts these.</p>
+<h2 id="script-throws-a-bunch-of-errors-or-got-struck-or-hangs">Script throws a bunch of errors or got struck or hangs<a class="headerlink" href="#script-throws-a-bunch-of-errors-or-got-struck-or-hangs" title="Permanent link">&para;</a></h2>
+<div class="admonition question">
+<p class="admonition-title">Report</p>
+<p>Well, that shouldn't have happened. Please consider opening an issue on <a href="https://github.com/tprasadtp/ubuntu-post-install/issues/new">Github</a>.</p>
+</div>
+<h3 id="how-to-recover">How to recover<a class="headerlink" href="#how-to-recover" title="Permanent link">&para;</a></h3>
+<ul>
+<li>If you know where it was stuck/errored, just re-run the task(s) which were not completed. If you don't know, go and check log file. Each task is labeled and is clearly logged before starting and after completing. Just run the tasks which did not complete. You don't have to re-download the packages you have already downloaded, because they are already cached by apt-get.</li>
+<li>Remember, some operations of the script can be very lengthy and can involve lots of downloads (If you used default list files, expect up to 2 GB of traffic). So, it might appear that script is stuck because cursor stops blinking. However it is not the case. If you are unsure please check the logs.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In rare cases where your Script exited while installing a DEB file, which has unmet dependencies, you might see broken packages error. In that case, run <code class="codehilite">sudo apt-get install -f</code> to fix the broken packages and run the script again.</p>
+</div>
+<h2 id="issues-not-mentioned-above">Issues not mentioned above?<a class="headerlink" href="#issues-not-mentioned-above" title="Permanent link">&para;</a></h2>
+<p>If you see any errors or script hangs/errors please do not hesitate to open an issue on <a href="https://github.com/tprasadtp/ubuntu-post-install/issues/new">Github</a>.</p>
+<p><img alt="GitHub issues" src="https://img.shields.io/github/issues/tprasadtp/ubuntu-post-install.svg" /></p>
                 
                   
                 
@@ -686,7 +745,7 @@ This project uses Amazon Root CA &amp; LetsEncrypt for SSL, make sure that your 
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../distros/" title="Supported" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../distros/" title="Distros" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -695,7 +754,7 @@ This project uses Amazon Root CA &amp; LetsEncrypt for SSL, make sure that your 
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Supported
+                Distros
               </span>
             </div>
           </a>

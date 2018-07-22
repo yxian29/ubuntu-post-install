@@ -355,8 +355,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../faq/distros/" title="Supported" class="md-nav__link">
-      Supported
+    <a href="../faq/distros/" title="Distros" class="md-nav__link">
+      Distros
     </a>
   </li>
 
@@ -367,8 +367,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../faq/errors/" title="Errors" class="md-nav__link">
-      Errors
+    <a href="../faq/errors/" title="Errors & Issues" class="md-nav__link">
+      Errors & Issues
     </a>
   </li>
 
@@ -381,18 +381,6 @@
   <li class="md-nav__item">
     <a href="../faq/linuxmint/" title="Linux Mint" class="md-nav__link">
       Linux Mint
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../faq/crash/" title="Crashes" class="md-nav__link">
-      Crashes
     </a>
   </li>
 
@@ -552,7 +540,7 @@
                 <h1 id="ci-and-testing">CI and Testing<a class="headerlink" href="#ci-and-testing" title="Permanent link">&para;</a></h1>
 <div class="admonition bug">
 <p class="admonition-title">Test Scripts</p>
-<p>Test Scripts assume that you are running on Travis. So They might fails if some  environment variables are not set. Please see, <a href="https://docs.travis-ci.com/user/environment-variables/">Travis environment variables</a>.</p>
+<p>Test Scripts assume that you are running on Travis. So They might fails if some environment variables are not set. Please see, <a href="https://docs.travis-ci.com/user/environment-variables/">Travis environment variables</a>.</p>
 </div>
 <p>Following Tests are done on Travis-CI.</p>
 <ul>
@@ -570,7 +558,7 @@
 <p>Trusty tests do not install indicator-kdeconnect, peek, openjdk-8-jdk, gnome-todo , gnome-calendar, polari and their PPAs. Please modify your lists accordingly.</p>
 </div>
 <ul>
-<li>Tests on Cosmic Cuttlefish (Job #build.8) use base image from <code class="codehilite">http://cdimage.ubuntu.com/ubuntu-base/daily/</code></li>
+<li>Tests on Cosmic Cuttlefish use base image from <code class="codehilite">http://cdimage.ubuntu.com/ubuntu-base/daily/</code></li>
 <li>Dockerfiles used for building the image are in <code class="codehilite">/dockerfiles</code> directory, they use official Ubuntu base images with script dependencies.</li>
 <li>Test scripts are located in <code class="codehilite">/tests</code> directory.</li>
 <li>Since its a time consuming process only simulated install is done on CI. Linux mint and Elementary are not tested in containers as of now, but will be in the future.</li>

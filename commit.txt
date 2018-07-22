@@ -1,5 +1,10 @@
-SRC Commit ID  : da64532
-SRC Message    : Merge pull request #13 from tprasadtp/gist-support
+SRC Commit ID  : 1470b86
+SRC Message    : replace `/` and `.` in test script urls with hyphens to avoid build failures (#14)
 
-Support configuration saved as Gist or available at any URL
+* replace `/` and `.` in urls with hyphens to avoid build failure
+* replace - and / in config url in pre-release test script
+* update readme to include logos
+* combine pages
+* some tweaks to docs
+* readme to include supported tasks
 Built from     : master

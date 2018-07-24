@@ -488,6 +488,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#install-static-binaries-to-usrlocalbin" title="Install Static binaries to /usr/local/bin" class="md-nav__link">
+    Install Static binaries to /usr/local/bin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#install-python-packages-via-pip" title="Install python packages (via pip)" class="md-nav__link">
     Install python packages (via pip)
   </a>
@@ -687,6 +694,13 @@
         <li class="md-nav__item">
   <a href="#install-debian-package-archives-deb-files" title="Install Debian package archives (.deb files)" class="md-nav__link">
     Install Debian package archives (.deb files)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-static-binaries-to-usrlocalbin" title="Install Static binaries to /usr/local/bin" class="md-nav__link">
+    Install Static binaries to /usr/local/bin
   </a>
   
 </li>
@@ -895,6 +909,26 @@
 <p class="admonition-title">Note on file names in configuration</p>
 <p>Please note that deb file will be  saved with the name mentioned in the file. (DEB file is named <strong>exactly</strong> as mentioned in the second field. So if you want them to be named with extension .deb include that in the second field and avoid illegal chars)</p>
 </div>
+<h2 id="install-static-binaries-to-usrlocalbin">Install Static binaries to /usr/local/bin<a class="headerlink" href="#install-static-binaries-to-usrlocalbin" title="Permanent link">&para;</a></h2>
+<p>This will install binaries <code class="codehilite">bin.list</code> or YAML config under <code class="codehilite">config.install.binaries</code>.</p>
+<ul>
+<li>APT Logs will  show entry in the format <code class="codehilite">[&lt;date and time&gt;] [  APT  ] &lt;log&gt;</code> for actions performed by apt commands. (<code class="codehilite">apt-get install -f</code> for missing packages)</li>
+<li><strong>Simulate</strong> option will only download the package but not install it.</li>
+<li>Configuration file is a <code class="codehilite">csv</code> file without headers. first column corresponds to URL ans the second field the file name under which the file is saved.</li>
+<li>Each DEB file to be installed should have following entry.</li>
+<li>URL to the deb file which can be accessed using wget<code class="codehilite">,</code>Name of the deb file without any spaces or special chars except hyphen.</li>
+<li>For example to install kubernetes compose the entry should look like below.</li>
+</ul>
+<div class="codehilite"><pre><span></span>https://github.com/kubernetes/kompose/releases/download/v1.15.0/kompose-linux-amd64,kompose
+</pre></div>
+
+<ul>
+<li>First part is the URL to the deb file separated by ',' name of the file.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note on file names in configuration</p>
+<p>Please note that file will be saved with the name mentioned in the file &amp; can be executed as such.</p>
+</div>
 <h2 id="install-python-packages-via-pip">Install python packages (via pip)<a class="headerlink" href="#install-python-packages-via-pip" title="Permanent link">&para;</a></h2>
 <p>This will install system wide python packages using pip. There are two lists. <code class="codehilite">pip.list</code> and <code class="codehilite">pip3.list</code> for python 2 and python 3 respectively. Alternatively you can specify in YAML config under <code class="codehilite">config.install.python2</code> or <code class="codehilite">config.install.python3</code>
 This task requires <code class="codehilite">python-pip package</code> is installed, If not , will be installed anyway.</p>
@@ -935,6 +969,9 @@ This task requires <code class="codehilite">python-pip package</code> is install
 <li>Add PPAs in the list file</li>
 <li>Install Apps</li>
 <li>Install DEB files</li>
+<li>Install Python 2 modules</li>
+<li>Install Python 3 Modules</li>
+<li>Install Static binaries</li>
 </ul>
 <p>This option will honor --yes and --simulate options as individual tasks would do.</p>
 <h3 id="autopilot-mode">AUTOPILOT Mode<a class="headerlink" href="#autopilot-mode" title="Permanent link">&para;</a></h3>

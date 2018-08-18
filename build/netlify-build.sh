@@ -74,7 +74,7 @@ function jekyll_production()
   --exclude 'LICENSE' \
   --exclude 'dockerfiles' \
   --exclude 'tests' \
-  ./ ./_site && printf "[ INFO ] Copied gh-pages\n"
+  ./ ./_site && printf "---> Copied gh-pages\n"
   gen_metadata;
 
 }
@@ -84,22 +84,23 @@ function jekyll_branch()
   install_dependencies;
   echo "---> Building Website with Branch"
   mkdocs build;
-  echo "---> Copying Static Files"
-  echo "Generate JSON"
-  mkdir -p ./api/json
-  for file in ./api/*.yml;
+  echo "---> Convering to JSON"
+  mkdir -p ./config/json
+  for file in ./config/*.yml;
   do
     printf "Linting & Converting File  to JSON : ${file}\n"
-    file_name_json=$(basename ./api/"${file}" .yml)
+    file_name_json=$(basename ./config/"${file}" .yml)
     file_name_json+=".json"
-    yamllint "${file}" && yml2json "${file}" | python -m json.tool > ./api/json/"${file_name_json}"
+    yamllint "${file}" && yml2json "${file}" | python -m json.tool > ./config/json/"${file_name_json}"
     index=$((index + 1))
   done
-  cp -R ./api/ ./_site/api/
-  echo "Copying Signature file"
+  echo "---> Copying Config Files"
+  rsync -Ea --recursive ./config/ ./_site/config/ && echo "Done!"
+  find ./_site/config -type f
+  echo "---> Copying Signature file"
   if [ -f after-effects.asc ]; then
-    mkdir -p ./api/gpg
-    cp ./after-effects.asc ./api/gpg/after-effects
+    mkdir -p ./config/gpg
+    cp ./after-effects.asc ./config/gpg/after-effects
   fi
   gen_metadata;
 }
@@ -128,7 +129,7 @@ function main()
 {
       #check if no args
       if [ $# -eq 0 ]; then
-              echo "------> No arguments found. See usage below."
+              echo "---> No arguments found. See usage below."
               usage;
       		    exit 1;
       fi;

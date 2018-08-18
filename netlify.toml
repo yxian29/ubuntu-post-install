@@ -8,18 +8,18 @@
 # Production context: All deploys to the main
 # repository branch will inherit these settings.
 [context.production]
-  command = "./vendor/netlify-build.sh --production"
+  command = "chmod +x ./build/*.sh && ./build/netlify-build.sh --production"
 
 # Deploy Preview context: All Deploy Previews
 # will inherit these settings.
 [context.deploy-preview]
   publish = "_site/"
-  command = "./vendor/netlify-build.sh --pull-request"
+  command = "chmod +x ./build/*.sh && ./build/netlify-build.sh --pull-request"
 
 # Branch Deploy context: All deploys that are not in
 # an active Deploy Preview will inherit these settings.
 [context.branch-deploy]
-  command = "./vendor/netlify-build.sh --branch"
+  command = "chmod +x ./build/*.sh && ./build/netlify-build.sh --branch"
 
 # Redirects
 # SEO
@@ -105,23 +105,16 @@
 
 #Config.yml
 [[redirects]]
-  from = "api/config"
+  from = "/config"
   query = {name = ":name"}
-  to = "api/config.yml?name=name"
-  status = 301
-  force = true
-
-#Config.yml Default
-[[redirects]]
-  from = "api/config/default"
-  to = "api/config.yml"
+  to = "/config/default.yml"
   status = 301
   force = true
 
 # Version  to version.yml
 [[redirects]]
-  from = "api/version"
-  to = "api/version.yml"
+  from = "/version"
+  to = "/config/version.yml"
   status = 301
   force = true
 

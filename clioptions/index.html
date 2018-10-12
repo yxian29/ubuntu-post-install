@@ -816,7 +816,15 @@
 </pre></div>
 
 </div>
-<details class="tip"><summary>This flag/option applies to following tasks</summary><ul><li>Installing apt packages.</li><li>Installing Debian package archives (DEBs).</li><li>Installing Python packages.</li><li>Upgrading system packages.</li><li>Purging unwanted packages.</li></ul></details><p>Following details should explain the behavior of this flag. Please do have a look at exceptions, as all tasks cannot be simulated.</p>
+<details class="tip"><summary>This flag/option applies to following tasks</summary><ul>
+<li>Installing apt packages.</li>
+<li>Installing Debian package archives (DEBs).</li>
+<li>Installing Python packages.</li>
+<li>Upgrading system packages.</li>
+<li>Purging unwanted packages.</li>
+</ul>
+</details>
+<p>Following details should explain the behavior of this flag. Please do have a look at exceptions, as all tasks cannot be simulated.</p>
 <ul>
 <li>This option will simulate installing packages mentioned in the lists, using the apt-get in-built dry-run option <code class="codehilite">apt-get install -s</code> to simulate the installation of packages. Nothing will be downloaded except repository metadata (deb files if option is chosen). Packages will not be installed.</li>
 <li>This option can be used to check if the files in the lists are compatible/available in the repository.</li>
@@ -824,8 +832,17 @@
 <li>Its a very good idea to simulate installation when you have reconfigured the apps and packages in the list to check what might be error prone.</li>
 <li>In case of DEB package files, they <strong>will</strong> be downloaded unlike apt-get package installs.</li>
 </ul>
-<details class="bug"><summary>Exceptions - Not everything can be simulated</summary><ul><li><strong>Simulate flag will not simulate adding Repositories or PPAs.</strong></li><li>If you want to revert the changes please use <strong>Reset Repositories</strong> option.</li><li>PPAs and repositories <strong>will</strong> be added regardless of the flag.</li><li>Python package installation cannot be simulated. (pip lacks support for it) The script will skip installing apt dependencies and python packages, if simulate option is used.
-  it simulate option is used.</li><li>APT package upgrades and apt repository metadata updates cannot be simulated. Only a list of packages upgrade-able will be listed in the log file in case of upgrades.</li><li>Simulate flag will not simulate installing dependencies for adding or deleting repositories and PPAs.</li></ul></details><h2 id="skip-version-checks">Skip Version Checks<a class="headerlink" href="#skip-version-checks" title="Permanent link">&para;</a></h2>
+<details class="bug"><summary>Exceptions - Not everything can be simulated</summary><ul>
+<li><strong>Simulate flag will not simulate adding Repositories or PPAs.</strong></li>
+<li>If you want to revert the changes please use <strong>Reset Repositories</strong> option.</li>
+<li>PPAs and repositories <strong>will</strong> be added regardless of the flag.</li>
+<li>Python package installation cannot be simulated. (pip lacks support for it) The script will skip installing apt dependencies and python packages, if simulate option is used.
+  it simulate option is used.</li>
+<li>APT package upgrades and apt repository metadata updates cannot be simulated. Only a list of packages upgrade-able will be listed in the log file in case of upgrades.</li>
+<li>Simulate flag will not simulate installing dependencies for adding or deleting repositories and PPAs.</li>
+</ul>
+</details>
+<h2 id="skip-version-checks">Skip Version Checks<a class="headerlink" href="#skip-version-checks" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>
 <div class="codehilite"><pre><span></span><span class="go">./after-effects --no-version-check</span>
@@ -844,7 +861,15 @@
 </pre></div>
 
 </div>
-<details class="tip"><summary>This flag/option applies to following repositories</summary><ul><li>Google Cloud SDK</li><li>GCSFUSE</li><li>InSync</li><li>Docker Community Edition</li><li>Wine HQ</li></ul></details><p>Usually it takes a while for additional Repositories (Docker, Google Cloud SDK etc) to add support for latest release of Ubuntu. However we can use the previous release for which packages are available. So, using packages built for previous release works fine most of the time. This is also good fix if you are running a alpha or beta release of Ubuntu.</p>
+<details class="tip"><summary>This flag/option applies to following repositories</summary><ul>
+<li>Google Cloud SDK</li>
+<li>GCSFUSE</li>
+<li>InSync</li>
+<li>Docker Community Edition</li>
+<li>Wine HQ</li>
+</ul>
+</details>
+<p>Usually it takes a while for additional Repositories (Docker, Google Cloud SDK etc) to add support for latest release of Ubuntu. However we can use the previous release for which packages are available. So, using packages built for previous release works fine most of the time. This is also good fix if you are running a alpha or beta release of Ubuntu.</p>
 <ul>
 <li>By default this option is disabled.</li>
 <li>Use <code class="codehilite">sudo ./after-effects -f</code> or <code class="codehilite">sudo ./after-effects --fix</code> to enable this.</li>
@@ -858,7 +883,14 @@
 <span class="nb">readonly</span> <span class="nv">codename_upcoming_release</span><span class="o">=</span><span class="s2">&quot;cosmic&quot;</span>
 </pre></div>
 
-<details class="danger"><summary>Note for Pre-Release/ development version of Ubuntu</summary><ul><li>If you are using a pre-release version of Ubuntu, you can use <code class="codehilite">--pre-release</code> flag to apply the above mentioned fix to pre-release version of Ubuntu.</li><li>This flag can be used independent of <code class="codehilite">--fix</code>. If both are used together then both flags will be applied if the release is upcoming-release.</li><li>If the release is stable, only <code class="codehilite">--fix</code> flag will be valid and <code class="codehilite">--pre-release</code> is ignored.</li><li>This is how it works:  If the repositories are  not available for latest stable release as well, go back a release. Ex. If the pre-release is 18.04 and the repositories is not available for 17.10 as well, we use 17.04 repositories. Usually happens in first few days of development cycle of 18.04.</li></ul></details><h2 id="skip-confirmation-prompts">Skip confirmation prompts<a class="headerlink" href="#skip-confirmation-prompts" title="Permanent link">&para;</a></h2>
+<details class="danger"><summary>Note for Pre-Release/ development version of Ubuntu</summary><ul>
+<li>If you are using a pre-release version of Ubuntu, you can use <code class="codehilite">--pre-release</code> flag to apply the above mentioned fix to pre-release version of Ubuntu.</li>
+<li>This flag can be used independent of <code class="codehilite">--fix</code>. If both are used together then both flags will be applied if the release is upcoming-release.</li>
+<li>If the release is stable, only <code class="codehilite">--fix</code> flag will be valid and <code class="codehilite">--pre-release</code> is ignored.</li>
+<li>This is how it works:  If the repositories are  not available for latest stable release as well, go back a release. Ex. If the pre-release is 18.04 and the repositories is not available for 17.10 as well, we use 17.04 repositories. Usually happens in first few days of development cycle of 18.04.</li>
+</ul>
+</details>
+<h2 id="skip-confirmation-prompts">Skip confirmation prompts<a class="headerlink" href="#skip-confirmation-prompts" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>
 <div class="codehilite"><pre><span></span><span class="go">./after-effects -y</span>
@@ -1006,9 +1038,15 @@ Default behavior is to clean apt cache and delete downloaded DEB packages.</p>
 <li>Flags used,</li>
 <li>Timezone and system language.</li>
 </ul>
-<details class="question"><summary>Privacy Concerns?</summary><ul><li>If you are freaking out, its a shell script !! You can literally look into it and check what's collected. Why if you ask? I mostly use it on a bunch of machines/VMs and would like to keep an eye on how it did.</li><li>Data will be stored in AWS DynamoDB and Google Firebase Real-time Database.
+<details class="question"><summary>Privacy Concerns?</summary><ul>
+<li>If you are freaking out, its a shell script !! You can literally look into it and check what's collected. Why if you ask? I mostly use it on a bunch of machines/VMs and would like to keep an eye on how it did.</li>
+<li>Data will be stored in AWS DynamoDB and Google Firebase Real-time Database.
 Data will not be shared with any third party. Period. Only me or my team members will have access
-to it. If you run a search query on google, it probably collects more data than me. API endpoints may log your IP addresses but script does not and WILL not collect IP addresses. (Github, Google and AWS).</li><li>If you flood the reporting endpoints, you might get HTTP 429 errors as reporting endpoints have rate limits. Script will exit with code 59.</li></ul></details><h2 id="version">Version<a class="headerlink" href="#version" title="Permanent link">&para;</a></h2>
+to it. If you run a search query on google, it probably collects more data than me. API endpoints may log your IP addresses but script does not and WILL not collect IP addresses. (Github, Google and AWS).</li>
+<li>If you flood the reporting endpoints, you might get HTTP 429 errors as reporting endpoints have rate limits. Script will exit with code 59.</li>
+</ul>
+</details>
+<h2 id="version">Version<a class="headerlink" href="#version" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>
 <div class="codehilite"><pre><span></span><span class="go">./after-effect -v</span>

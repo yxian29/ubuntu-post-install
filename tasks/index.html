@@ -781,7 +781,11 @@
 <li>Kubernetes</li>
 <li>Insync</li>
 </ul>
-<details class="tip"><summary>Using <code class="codehilite">--fix</code> falg</summary><p>Please note that the above repositories are sometimes not updated for latest Ubuntu release and most certainly will not be available for upcoming release of Ubuntu(Alpha/Beta). It might take some time till the repositories are available for the latest release. Use -f or --fix command line option or --pre-release in case you are using a Development version of ubuntu to revert using latest available version of repositories (usually previous Ubuntu release or in case of Beta/Alpha latest stable release of ubuntu). <a href="../clioptions/#fix-for-latest-ubuntu-releases">For more info see command line options.</a></p></details><details class="tip"><summary>Controlling which repository is added using config file</summary><p>You can set your YML file to decide which repository is added. Some repositories may no be suppoted on your architecture or distribution. Take a look at <a href="../api/yaml">config.yml</a> for example. If you omit a value, it defaults to false <strong>ALWAYS</strong>. Do note that if you are using lists default values are different, they are mentioned in below.</p></details><details class="note"><summary>Default Variables if using Lists</summary><div class="codehilite"><pre><span></span><span class="c1">#============================ Switches/ bools ================================</span>
+<details class="tip"><summary>Using <code class="codehilite">--fix</code> falg</summary><p>Please note that the above repositories are sometimes not updated for latest Ubuntu release and most certainly will not be available for upcoming release of Ubuntu(Alpha/Beta). It might take some time till the repositories are available for the latest release. Use -f or --fix command line option or --pre-release in case you are using a Development version of ubuntu to revert using latest available version of repositories (usually previous Ubuntu release or in case of Beta/Alpha latest stable release of ubuntu). <a href="../clioptions/#fix-for-latest-ubuntu-releases">For more info see command line options.</a></p>
+</details>
+<details class="tip"><summary>Controlling which repository is added using config file</summary><p>You can set your YML file to decide which repository is added. Some repositories may no be suppoted on your architecture or distribution. Take a look at <a href="../api/yaml">config.yml</a> for example. If you omit a value, it defaults to false <strong>ALWAYS</strong>. Do note that if you are using lists default values are different, they are mentioned in below.</p>
+</details>
+<details class="note"><summary>Default Variables if using Lists</summary><div class="codehilite"><pre><span></span><span class="c1">#============================ Switches/ bools ================================</span>
 
   <span class="c1"># Latest wine builds</span>
   <span class="nv">add_winehq_repo</span><span class="o">=</span><span class="nb">true</span>
@@ -819,7 +823,9 @@
   <span class="c1"># Define Data Directory</span>
   <span class="nv">data_dir</span><span class="o">=</span><span class="s2">&quot;data&quot;</span>
 </pre></div>
-</details><h3 id="canonical-partner-repositories">Canonical partner repositories<a class="headerlink" href="#canonical-partner-repositories" title="Permanent link">&para;</a></h3>
+
+</details>
+<h3 id="canonical-partner-repositories">Canonical partner repositories<a class="headerlink" href="#canonical-partner-repositories" title="Permanent link">&para;</a></h3>
 <p>Canonical partner repositories are not configured or enabled for derivatives of Ubuntu because thee might be some conflicts.</p>
 <div class="admonition bug">
 <p class="admonition-title">Note on 32 bit &amp; ARM Architecture</p>

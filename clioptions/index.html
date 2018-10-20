@@ -869,7 +869,7 @@
 <li>Wine HQ</li>
 </ul>
 </details>
-<p>Usually it takes a while for additional Repositories (Docker, Google Cloud SDK etc) to add support for latest release of Ubuntu. However we can use the previous release for which packages are available. So, using packages built for previous release works fine most of the time. This is also good fix if you are running a alpha or beta release of Ubuntu. These options only work on Ubuntu or distros using ubuntu codenames. They <strong>DO NOT</strong> work on Debian or Linux Mint.</p>
+<p>Usually it takes a while for additional Repositories (Docker, Google Cloud SDK etc) to add support for latest release of Ubuntu. However we can use the previous release for which packages are available. So, using packages built for previous release works fine most of the time. This is also good fix if you are running a alpha or beta release of Ubuntu. These options only work on Ubuntu or distros using ubuntu codenames and Linux Mint. They <strong>DO NOT</strong> work on Debian.</p>
 <ul>
 <li>By default this option is disabled.</li>
 <li>Use <code class="codehilite">sudo ./after-effects -f</code> or <code class="codehilite">sudo ./after-effects --fix</code> to enable this.</li>
@@ -998,7 +998,7 @@ Default behavior is to clean apt cache and delete downloaded DEB packages.</p>
 </pre></div>
 
 </div>
-<p>Example version files are in <code class="codehilite">api</code> directory. All the fields are mandatory.</p>
+<p>Example version file is in <code class="codehilite">config</code> directory. All the fields are mandatory.</p>
 <h2 id="remote-yaml-configuration-file">Remote YAML configuration file<a class="headerlink" href="#remote-yaml-configuration-file" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>
@@ -1042,8 +1042,8 @@ Default behavior is to clean apt cache and delete downloaded DEB packages.</p>
 <li>If you are freaking out, its a shell script !! You can literally look into it and check what's collected. Why if you ask? I mostly use it on a bunch of machines/VMs and would like to keep an eye on how it did.</li>
 <li>Data will be stored in AWS DynamoDB and Google Firebase Real-time Database.
 Data will not be shared with any third party. Period. Only me or my team members will have access
-to it. If you run a search query on google, it probably collects more data than me. API endpoints may log your IP addresses but script does not and WILL not collect IP addresses. (Github, Google and AWS).</li>
-<li>If you flood the reporting endpoints, you might get HTTP 429 errors as reporting endpoints have rate limits. Script will exit with code 59.</li>
+to it. If you run a search query on google, it probably collects more data than me. API endpoints/PaaS/IaaS provider may log your IP addresses, but script does not and WILL not collect IP addresses.</li>
+<li>If you flood the reporting endpoints, you might get HTTP 429 errors as reporting endpoints have rate limits.</li>
 </ul>
 </details>
 <h2 id="version">Version<a class="headerlink" href="#version" title="Permanent link">&para;</a></h2>
@@ -1057,7 +1057,7 @@ to it. If you run a search query on google, it probably collects more data than 
 </pre></div>
 
 </div>
-<p>This will display version info. You do not have to be root to run this. For all the other tasks you need to be root or use sudo.</p>
+<p>This will display version info. You do <strong>not</strong> have to be root to run this. For all the other tasks you need to be root or use sudo.</p>
                 
                   
                 

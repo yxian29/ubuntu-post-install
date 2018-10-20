@@ -618,7 +618,8 @@
                 
                 
                 <h1 id="overview-of-configuration-files">Overview of Configuration files<a class="headerlink" href="#overview-of-configuration-files" title="Permanent link">&para;</a></h1>
-<p>This Script is designed to be flexible. Configurations live in directory <code class="codehilite">/data</code> &amp; sample YAML configurations are in <code class="codehilite">config</code>.</p>
+<p>This Script is designed to be flexible. You have two options of configuring this script.
+<code class="codehilite">list</code> files directory <code class="codehilite">/data</code> &amp; YAML configurations are in <code class="codehilite">config</code>.</p>
 <h2 id="configuration-using-lists">Configuration using  lists<a class="headerlink" href="#configuration-using-lists" title="Permanent link">&para;</a></h2>
 <p>These files contain list of apt packages which can be installed. Please see <a href="../tasks/apt">Installing APT packages</a> for more information.</p>
 <table>
@@ -721,18 +722,19 @@
 <li>Check <a href="../yaml/#yaml-config">Sample YAML</a> configuration file <a href="../yaml/#yaml-config">here.</a></li>
 </ul>
 <div class="admonition tip">
-<p class="admonition-title">Use local file</p>
+<p class="admonition-title">Using local file</p>
 <ul>
 <li>If you are testing, it might be a good idea to use a local file which holds this configuration data. In that  case use <code class="codehilite">-C &lt;filename&gt;</code> option.</li>
 <li>After you customize, might want to use simulate flag. <code class="codehilite">sudo ./after-effects -s -C config.yml -Y</code></li>
+<li>If both <code class="codehilite">-C</code> and <code class="codehilite">--remote-yaml</code> are used, local config file takes priority, and remote file is <strong>completely</strong> ignored.</li>
 </ul>
 </div>
 <h2 id="automate">Automate<a class="headerlink" href="#automate" title="Permanent link">&para;</a></h2>
-<p>Setting <code class="codehilite">&quot;AUTOPILOT=true&quot;</code> will run all the tasks specified in the YAML file, or if <code class="codehilite">-L</code> list option is used, then all tasks are run in following order</p>
+<p>Setting <code class="codehilite">&quot;AUTOPILOT=true&quot;</code> will run all the tasks specified in the YAML file, or if <code class="codehilite">-L</code> list option is used, then all tasks are executed. the order in which tasks are run is as follows.</p>
 <ul>
 <li>Update</li>
 <li>Upgrade</li>
-<li>Add Reposiories</li>
+<li>Add Repositories</li>
 <li>Add PPAs [if supported]</li>
 <li>Install packages</li>
 <li>Install DEB packages</li>

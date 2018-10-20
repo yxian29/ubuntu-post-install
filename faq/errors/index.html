@@ -678,7 +678,7 @@
                 <h1 id="errors">Errors<a class="headerlink" href="#errors" title="Permanent link">&para;</a></h1>
 <h2 id="what-if-i-get-an-error-saying-unknown-distributionrelease">What if I get an error saying Unknown Distribution/Release?<a class="headerlink" href="#what-if-i-get-an-error-saying-unknown-distributionrelease" title="Permanent link">&para;</a></h2>
 <p>That usually means you are running a Distribution which is not supported or too old or a derivative which is not recognized by the script. However it also might be possible that <code class="codehilite">lsb-release</code> package is missing from your system. Since the script depends on it for determining what is the code-name of the release it will fail.
-You might see ans error like this,</p>
+You might see an error like this,</p>
 <div class="codehilite"><pre><span></span><span class="go">./after-effects: line 41: lsb_release: command not found</span>
 <span class="go">./after-effects: line 42: lsb_release: command not found</span>
 <span class="go">./after-effects: line 43: lsb_release: command not found</span>
@@ -714,7 +714,7 @@ You might see ans error like this,</p>
 </pre></div>
 
 <p>Try running <code class="codehilite">wget https://ae.prasadt.com/api/version.yml</code>. If you see SSL errors, that means that your CA bundle is out of date.
-This project uses Amazon Root CA &amp; LetsEncrypt for SSL, make sure that your System trusts these.</p>
+This project uses Amazon Root CA &amp; LetsEncrypt for SSL, make sure that your system trusts these.</p>
 <h2 id="script-throws-a-bunch-of-errors-or-got-struck-or-hangs">Script throws a bunch of errors or got struck or hangs<a class="headerlink" href="#script-throws-a-bunch-of-errors-or-got-struck-or-hangs" title="Permanent link">&para;</a></h2>
 <div class="admonition question">
 <p class="admonition-title">Report</p>
@@ -727,7 +727,7 @@ This project uses Amazon Root CA &amp; LetsEncrypt for SSL, make sure that your 
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>In rare cases where your Script exited while installing a DEB file, which has unmet dependencies, you might see broken packages error. In that case, run <code class="codehilite">sudo apt-get install -f</code> to fix the broken packages and run the script again.</p>
+<p>In rare cases where your script exited while installing a DEB file, which has unmet dependencies, you might see broken packages error. In that case, run <code class="codehilite">sudo apt-get install -f</code> to fix the broken packages and run the script again.</p>
 </div>
 <h2 id="issues-not-mentioned-above">Issues not mentioned above?<a class="headerlink" href="#issues-not-mentioned-above" title="Permanent link">&para;</a></h2>
 <p>If you see any errors or script hangs/errors please do not hesitate to open an issue on <a href="https://github.com/tprasadtp/ubuntu-post-install/issues/new">Github</a>.</p>

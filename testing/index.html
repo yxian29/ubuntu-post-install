@@ -551,10 +551,10 @@
 </div>
 <p>Following Tests are done on Travis-CI.</p>
 <ul>
-<li><code class="codehilite">shellcheck</code> every executable script (Job #build.1)</li>
-<li>Test on Xenial container (Job #build.2)</li>
-<li>Test on Bionic Beaver (Job #build.3)</li>
-<li>Test on Trusty (Host) (Job #build.4)</li>
+<li><code class="codehilite">shellcheck</code> every executable bash script (Job #build.1)</li>
+<li>Test on Ubuntu Bionic Beaver (Job #build.2)</li>
+<li>Test on Ubuntu Xenial (Job #build.3)</li>
+<li>Test on Ubuntu Trusty (Host) (Job #build.4)</li>
 <li>Test on Debian 9 Stretch (Job #build.5)</li>
 <li>Test on Debian 8 Jessie (Job #build.6)</li>
 <li>Test on Ubuntu Cosmic  (Job #build.7)</li>
@@ -563,18 +563,21 @@
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Trusty tests do not install indicator-kdeconnect, peek, openjdk-8-jdk, gnome-todo , gnome-calendar, polari and their PPAs. Please modify your lists accordingly.</p>
+<ul>
+<li>Trusty tests do not install indicator-kdeconnect, peek, openjdk-8-jdk, gnome-todo , gnome-calendar, polari and their PPAs. Please modify your lists accordingly.</li>
+<li>Build scripts depend on Netlify builds to succeed access latest YAML files. So, if a Netlify build fails, either Travis jobs might fail or might not be tested with latest YAMLs. Currently there is not way to properly and easily communicate with two as Netlify APIs do not provide easy way to access build status per branch or commit.</li>
+</ul>
 </div>
 <ul>
 <li>Tests on Cosmic Cuttlefish use base image from <code class="codehilite">http://cdimage.ubuntu.com/ubuntu-base/daily/</code></li>
 <li>Dockerfiles used for building the image are in <code class="codehilite">/dockerfiles</code> directory, they use official Ubuntu base images with script dependencies.</li>
 <li>Test scripts are located in <code class="codehilite">/tests</code> directory.</li>
-<li>Since its a time consuming process only simulated install is done on CI. Linux mint and Elementary are not tested in containers as of now, but will be in the future.</li>
+<li>Since its a time consuming process only simulated install is done on CI. Linux mint and Elementary are not tested in containers, but <strong>may</strong> be in the future.</li>
 <li>It is possible that there might be some errors specific to your setup. Please report if so. It is <strong>Strongly</strong> advised to try install apps and deb files in simulate mode first before proceeding with actual installation.</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Never set environment variable <code class="codehilite">CI=true</code> unless you are running in a CI environment or are sure of its effects.</p>
+<p><strong>Never</strong> set environment variable <code class="codehilite">CI=true</code> or <code class="codehilite">TRAVIS=true</code>, unless you are running in a CI environment or are sure of its effects.</p>
 </div>
                 
                   

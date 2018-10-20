@@ -1,3 +1,5 @@
-SRC Commit ID  : e50f964
-SRC Message    : fix shellcheck 2155
+SRC Commit ID  : 7996aba
+SRC Message    : Merge PR #15 remove-commitid-from-release-body
+
+Remove commit ID from release body as its already displayed on Github.
 Built from     : master

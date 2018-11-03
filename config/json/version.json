@@ -1,11 +1,12 @@
 {
-    "api": 1,
+    "api": 2,
     "stats": {
         "node": "https://stats.ae.prasadt.com/report",
         "report": true
     },
     "version": {
-        "name": "5.3.1 (Buster Support in Testing)",
-        "number": 531
+        "changelog": "Cosmic is now stable + Prep for Disco",
+        "name": "5.3.2",
+        "number": 532
     }
 }

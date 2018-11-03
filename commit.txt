@@ -1,5 +1,9 @@
-SRC Commit ID  : 7996aba
-SRC Message    : Merge PR #15 remove-commitid-from-release-body
+SRC Commit ID  : 41f3d1a
+SRC Message    : Promote cosmic to stable, add initial 19.04 disco support (#16)
 
-Remove commit ID from release body as its already displayed on Github.
+* promote cosmic to stable, add initial 19.04 support
+
+* add --fix to test scripts
+
+* remove code climate badge as we are not using go for now
 Built from     : master

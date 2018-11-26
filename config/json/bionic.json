@@ -42,7 +42,10 @@
                     "vainfo",
                     "vdpauinfo",
                     "s3cmd",
-                    "python3-pip"
+                    "python3-pip",
+                    "cmake",
+                    "libboost-all-dev",
+                    "swig"
                 ],
                 "external": [
                     "google-chrome-stable",
@@ -50,7 +53,22 @@
                     "code",
                     "google-cloud-sdk",
                     "gcsfuse",
-                    "docker-ce"
+                    "docker-ce",
+                    "chromium-browser",
+                    "yubioath-desktop",
+                    "yubikey-manager-qt",
+                    "libpam-u2f",
+                    "yubikey-personalization-gui",
+                    "yubikey-piv-manager",
+                    "ubuntu-restricted-extras",
+                    "ubuntu-restricted-addons",
+                    "unrar",
+                    "limesuite",
+                    "liblimesuite-dev",
+                    "limesuite-udev",
+                    "soapysdr-tools",
+                    "soapysdr-module-lms7",
+                    "timeshift"
                 ],
                 "multimedia": [
                     "audacity",
@@ -65,7 +83,18 @@
                     "cheese"
                 ],
                 "other": [
-                    "gnome-online-miners"
+                    "gnome-online-miners",
+                    "evolution",
+                    "gnuradio",
+                    "gqrx-sdr",
+                    "gr-radar",
+                    "gnome-boxes",
+                    "gnome-tweaks",
+                    "opensc",
+                    "pcscd",
+                    "scdaemon",
+                    "zsh",
+                    "seahorse-nautilus"
                 ],
                 "productivity": [
                     "empathy",
@@ -95,9 +124,7 @@
                 ]
             },
             "binaries": [
-                "https://github.com/docker/compose/releases/download/1.20.0/docker-compose-linux-x86_64,docker-compose",
-                "https://github.com/kubernetes/minikube/releases/download/v0.28.2/minikube-linux-amd64,minikube",
-                "https://github.com/kubernetes/kompose/releases/download/v1.15.0/kompose-linux-amd64,kompose"
+                "https://github.com/docker/compose/releases/download/1.20.0/docker-compose-linux-x86_64,docker-compose"
             ],
             "debian_packages": [
                 "https://atom-installer.github.com/v1.32.2/atom-amd64.deb,Atom-Editor.deb"
@@ -105,7 +132,8 @@
         },
         "ppa": [
             "ppa:yubico/stable",
-            "ppa:teejee2008/ppa"
+            "ppa:teejee2008/ppa",
+            "ppa:myriadrf/drivers"
         ],
         "purge": [
             "gnome-mines",
@@ -117,8 +145,8 @@
             "apt": true,
             "binaries": true,
             "debs": true,
-            "pip2": true,
-            "pip3": true,
+            "pip2": false,
+            "pip3": false,
             "ppa": true,
             "purge": true,
             "repo": true,

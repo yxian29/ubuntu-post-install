@@ -1,6 +1,3 @@
-SRC Commit ID  : c03e6d2
-SRC Message    : Add Mint 19.1 Support + bugfixes
-- Fix conflict when -C and -R both are used
-- Hide Task config if Autopilot is not set to true
-- bump to 5.3.3
+SRC Commit ID  : b9b3118
+SRC Message    : appease shellcheck
 Built from     : master

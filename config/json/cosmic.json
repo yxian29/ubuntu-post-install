@@ -4,7 +4,7 @@
         "add_repo": {
             "docker": true,
             "google": true,
-            "googlecloud": true,
+            "googlecloud": false,
             "insync": true,
             "kubernetes": false,
             "mendeley": false,
@@ -12,10 +12,10 @@
             "skype": true,
             "spotify": true,
             "vscode": true,
-            "winehq": true
+            "winehq": false
         },
         "flags": {
-            "auto_yes": true,
+            "auto_yes": false,
             "preserve_debs": false,
             "purge_enabled": true
         },
@@ -28,7 +28,9 @@
                     "gdebi",
                     "gparted",
                     "synaptic",
-                    "bleachbit"
+                    "bleachbit",
+                    "tree",
+                    "stow"
                 ],
                 "development": [
                     "curl",
@@ -42,10 +44,7 @@
                     "vainfo",
                     "vdpauinfo",
                     "s3cmd",
-                    "python3-pip",
-                    "cmake",
-                    "libboost-all-dev",
-                    "swig"
+                    "python3-pip"
                 ],
                 "external": [
                     "google-chrome-stable",
@@ -63,12 +62,10 @@
                     "ubuntu-restricted-extras",
                     "ubuntu-restricted-addons",
                     "unrar",
+                    "timeshift",
                     "limesuite",
                     "liblimesuite-dev",
-                    "limesuite-udev",
-                    "soapysdr-tools",
-                    "soapysdr-module-lms7",
-                    "timeshift"
+                    "limesuite-udev"
                 ],
                 "multimedia": [
                     "audacity",
@@ -88,13 +85,38 @@
                     "gnuradio",
                     "gqrx-sdr",
                     "gr-radar",
+                    "gr-radar-doc",
                     "gnome-boxes",
                     "gnome-tweaks",
                     "opensc",
                     "pcscd",
                     "scdaemon",
                     "zsh",
-                    "seahorse-nautilus"
+                    "seahorse-nautilus",
+                    "cmake",
+                    "libboost-all-dev",
+                    "swig",
+                    "g++",
+                    "ccache",
+                    "gcc-opt",
+                    "libi2c-dev",
+                    "libusb-1.0-0-dev",
+                    "libsqlite3-dev",
+                    "libwxgtk3.0-dev",
+                    "python-tk",
+                    "python3-tk",
+                    "python-soapysdr",
+                    "python3-soapysdr",
+                    "soapysdr-module-osmosdr",
+                    "soapysdr-module-rtlsdr",
+                    "soapysdr-tools",
+                    "soapysdr-module-lms7",
+                    "python-soapysdr",
+                    "soapysdr-tools",
+                    "soapysdr-module-rtlsdr",
+                    "python-soapysdr",
+                    "libsoapysdr-dev",
+                    "libsoapysdr-doc"
                 ],
                 "productivity": [
                     "empathy",
@@ -132,8 +154,7 @@
         },
         "ppa": [
             "ppa:yubico/stable",
-            "ppa:teejee2008/ppa",
-            "ppa:myriadrf/drivers"
+            "ppa:teejee2008/ppa"
         ],
         "purge": [
             "gnome-mines",

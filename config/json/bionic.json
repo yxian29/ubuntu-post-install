@@ -120,7 +120,10 @@
                     "soapysdr-module-rtlsdr",
                     "python-soapysdr",
                     "libsoapysdr-dev",
-                    "libsoapysdr-doc"
+                    "libsoapysdr-doc",
+                    "virt-manager",
+                    "virt-viewer",
+                    "libvirt-daemon-system"
                 ],
                 "productivity": [
                     "evolution",

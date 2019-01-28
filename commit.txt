@@ -1,3 +1,3 @@
-SRC Commit ID  : 082211b
-SRC Message    : improve logging, add new keys to cleanup list
+SRC Commit ID  : 7cce189
+SRC Message    : Fix ROS repo URL on debian, UPdate logging & docs
 Built from     : master

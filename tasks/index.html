@@ -780,6 +780,7 @@
 <li>Google cloud SDK (google-cloud-sdk &amp; gcsfuse)</li>
 <li>Kubernetes</li>
 <li>Insync</li>
+<li>ROS (Robot-Operating-System)</li>
 </ul>
 <details class="tip"><summary>Using <code class="codehilite">--fix</code> falg</summary><p>Please note that the above repositories are sometimes not updated for latest Ubuntu release and most certainly will not be available for upcoming release of Ubuntu(Alpha/Beta). It might take some time till the repositories are available for the latest release. Use -f or --fix command line option or --pre-release in case you are using a Development version of ubuntu to revert using latest available version of repositories (usually previous Ubuntu release or in case of Beta/Alpha latest stable release of ubuntu). <a href="../clioptions/#fix-for-latest-ubuntu-releases">For more info see command line options.</a></p>
 </details>
@@ -820,11 +821,22 @@
   <span class="c1">#Kubernetes</span>
   <span class="nv">add_kubernetes_repo</span><span class="o">=</span><span class="nb">false</span>
 
+  <span class="c1">#ROS</span>
+  <span class="nv">add_ros_repo</span><span class="o">=</span><span class="nb">false</span>
+
   <span class="c1"># Define Data Directory</span>
   <span class="nv">data_dir</span><span class="o">=</span><span class="s2">&quot;data&quot;</span>
 </pre></div>
 
 </details>
+<div class="admonition warning">
+<p class="admonition-title">ROS Releases &amp; Ubuntu/Debian versions</p>
+<ul>
+<li>ROS releases only support certain Ubuntu/Debian distributions. Please use appropriate packages to install depending on
+your distro/version. You can find more info at <a href="http://wiki.ros.org/ROS/Installation">ROS-Wiki</a></li>
+<li>Though Ubuntu derivatives might work, they are not supported. </li>
+</ul>
+</div>
 <h3 id="canonical-partner-repositories">Canonical partner repositories<a class="headerlink" href="#canonical-partner-repositories" title="Permanent link">&para;</a></h3>
 <p>Canonical partner repositories are not configured or enabled for derivatives of Ubuntu because thee might be some conflicts.</p>
 <div class="admonition bug">

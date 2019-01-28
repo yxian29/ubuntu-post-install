@@ -528,6 +528,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#uni-freiburg-mirror" title="Uni-Freiburg Mirror" class="md-nav__link">
+    Uni-Freiburg Mirror
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#version" title="Version" class="md-nav__link">
     Version
   </a>
@@ -755,6 +762,13 @@
         <li class="md-nav__item">
   <a href="#do-not-report-statistics" title="Do not report statistics" class="md-nav__link">
     Do not report statistics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uni-freiburg-mirror" title="Uni-Freiburg Mirror" class="md-nav__link">
+    Uni-Freiburg Mirror
   </a>
   
 </li>
@@ -1046,6 +1060,21 @@ to it. If you run a search query on google, it probably collects more data than 
 <li>If you flood the reporting endpoints, you might get HTTP 429 errors as reporting endpoints have rate limits.</li>
 </ul>
 </details>
+<h2 id="uni-freiburg-mirror">Uni-Freiburg Mirror<a class="headerlink" href="#uni-freiburg-mirror" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Enabling this option will use mirrors from Uni-Freiburg if they are available. You may have to be within Uni-Freiburg network
+to access it. The mirror may not work or be up-to date with upstream. Use this option only if you are inside Uni-Freiburg network
+and know what versions/libs are hosted on the mirror.</p>
+</div>
+<ul>
+<li>Uses mirrors from <code class="codehilite">University of Freiburg</code>. Only available for limited number of repositories. <strong>DO NOT</strong> use this option if you are not a faculty or student of Uni-Freiburg, as it may have un-intended side effects.</li>
+<li>Arguments: <code class="codehilite">-u</code> or <code class="codehilite">--use-uf-mirror</code>. Because I do not wish to waste bandwidth this option is not tested on Travis builds.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>This script/github-repository/or this website is not affiliated in with University of Freiburg.</strong></p>
+</div>
 <h2 id="version">Version<a class="headerlink" href="#version" title="Permanent link">&para;</a></h2>
 <div class="admonition snippet">
 <p class="admonition-title">Usage</p>

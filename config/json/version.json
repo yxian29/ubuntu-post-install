@@ -5,8 +5,8 @@
         "report": false
     },
     "version": {
-        "changelog": "Cosmic + Tessa Support + Updated WineHQ keys",
-        "name": "5.3.4",
-        "number": 534
+        "changelog": "Support for ROS repo, Cosmic+Tessa",
+        "name": "5.3.6",
+        "number": 536
     }
 }

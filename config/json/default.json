@@ -8,6 +8,7 @@
             "insync": true,
             "kubernetes": false,
             "mendeley": false,
+            "ros": true,
             "signal": false,
             "skype": true,
             "spotify": true,

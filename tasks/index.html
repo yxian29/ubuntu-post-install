@@ -473,6 +473,26 @@
     Install apt packages
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#there-are-seven-lists-under-key-configinstallaptmentioned-from-1-7" title="There are seven lists under key config.install.apt.[mentioned from 1-7]" class="md-nav__link">
+    There are seven lists under key config.install.apt.[mentioned from 1-7]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#special-list-purge-list" title="Special list - Purge list" class="md-nav__link">
+    Special list - Purge list
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -684,6 +704,26 @@
     Install apt packages
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#there-are-seven-lists-under-key-configinstallaptmentioned-from-1-7" title="There are seven lists under key config.install.apt.[mentioned from 1-7]" class="md-nav__link">
+    There are seven lists under key config.install.apt.[mentioned from 1-7]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#special-list-purge-list" title="Special list - Purge list" class="md-nav__link">
+    Special list - Purge list
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -834,7 +874,7 @@
 <ul>
 <li>ROS releases only support certain Ubuntu/Debian distributions. Please use appropriate packages to install depending on
 your distro/version. You can find more info at <a href="http://wiki.ros.org/ROS/Installation">ROS-Wiki</a></li>
-<li>Though Ubuntu derivatives might work, they are not supported. </li>
+<li>Though Ubuntu derivatives might work, they are not supported.</li>
 </ul>
 </div>
 <h3 id="canonical-partner-repositories">Canonical partner repositories<a class="headerlink" href="#canonical-partner-repositories" title="Permanent link">&para;</a></h3>
@@ -864,46 +904,32 @@ your distro/version. You can find more info at <a href="http://wiki.ros.org/ROS/
 <ul>
 <li>Packages can be installed by using configuration lists in the data directory. This works similar to ppas</li>
 </ul>
-<p>```console</p>
-<hr />
-<div class="codehilite"><pre><span></span>                              APT Lists
-</pre></div>
-
-
-<hr />
-<p>There are seven lists under key config.install.apt.[mentioned from 1-7]
-  1. administration : Contains Administrative packages
-  2. security       : contains Security related tools and packages
-  3. productivity   : Office tools, writing tools, LateX, document tools and other
-                      productivity tools, Email clients, browsers, IM clients etc.
-                    : Example : LateX, TeXStudio, Libre office, pandoc empathy, Thunderbird
-  4. multimedia     : Multimedia tools like media players, audio converters and playes etc.
-  5. development    : IDEs [Spyder, Jetbeans etc], languages [go, python, ruby, rust, java etc],
-                    : Containers [docker lxc rkt etc], Python libraries, compilers [gcc, clang]
-                    : SDKs [AWS SDK, Google Cloud SDK, open-jdk, Tensor Flow], headers and libraries[ocl-icd-dev],
-                    : Anything related to development and *-dev or *-devl packages.
-  6. other          : Everything which does not fit in the above categories.
-                    : Themes, Tools, Utilities like htop etc.
-  7. external       : Any packages which are provided by ppas, or repositories not present in
-                    : base [K/L/Ed/X]-Ubuntu distribution. There's a possibility that the repository might not
-                    : be added or may be unavailable or offline. So Keeping the list separate from
-                    : others packages minimizes errors if there are any.
-  This classification is only for ease of use and need not be strictly followed. You can put
-  'vlc' package in 'security', it will still install fine. This classification helps
-  while writing configs and editing them. Its advised to follow it if your configs
-  tend to get to couple of hundreds of lines. Also YAML file should be a valid YAML.</p>
-<hr />
-<div class="codehilite"><pre><span></span>                 Special list - Purge list
-</pre></div>
-
-
-<hr />
+<h3 id="there-are-seven-lists-under-key-configinstallaptmentioned-from-1-7">There are seven lists under key config.install.apt.[mentioned from 1-7]<a class="headerlink" href="#there-are-seven-lists-under-key-configinstallaptmentioned-from-1-7" title="Permanent link">&para;</a></h3>
+<ol>
+<li>administration - Contains Administrative packages</li>
+<li>security - Contains Security related tools and packages</li>
+<li>productivity - Office tools, writing tools, LateX, document tools and other
+productivity tools, Email clients, browsers, IM clients etc.
+Example : LateX, TeXStudio, Libre office, pandoc empathy, Thunderbird</li>
+<li>multimedia - Multimedia tools like media players, audio converters and playes etc.</li>
+<li>development - IDEs [Spyder, Jetbeans etc], languages [go, python, ruby, rust, java etc],
+Containers [docker lxc rkt etc], Python libraries, compilers [gcc, clang]
+SDKs [AWS SDK, Google Cloud SDK, open-jdk, Tensor Flow], headers and libraries[ocl-icd-dev],
+Anything related to development and -dev or -devl packages.</li>
+<li>other - Everything which does not fit in the above categories.
+Themes, Tools, Utilities like htop etc.</li>
+<li>external - Any packages which are provided by ppas, or repositories not present in
+base [K/L/Ed/X]-Ubuntu distribution. There's a possibility that the repository might not
+be added or may be unavailable or offline. So Keeping the list separate from
+others packages minimizes errors if there are any.</li>
+</ol>
+<p>This classification is only for ease of use and need not be strictly followed. You can put
+'vlc' package in 'security', it will still install fine. This classification helps
+while writing configs and editing them. Its advised to follow it if your configs
+tend to get to couple of hundreds of lines. Also YAML file should be a valid YAML &amp; indented by 2 spaces.</p>
+<h3 id="special-list-purge-list">Special list - Purge list<a class="headerlink" href="#special-list-purge-list" title="Permanent link">&para;</a></h3>
 <p>There is a special package list under key, config.purge or purge.list, which contains list of apt packages to be
-  purged from the system.
-  ```</p>
-<ul>
-<li>Make sure that all the packages in the lists are available for your release. Using <code class="codehilite">-s</code> command line option helps. Also check for the logs for any errors or conflicts.</li>
-</ul>
+purged from the system. Make sure that all the packages in the lists are available for your release. Using <code class="codehilite">-s</code> command line option helps. Also check for the logs for any errors or conflicts.</p>
 <h2 id="install-debian-package-archives-deb-files">Install Debian package archives (.deb files)<a class="headerlink" href="#install-debian-package-archives-deb-files" title="Permanent link">&para;</a></h2>
 <p>This will install deb files specified in the list <code class="codehilite">deb.list</code> or YAML config under <code class="codehilite">config.install.debian_packages</code>.</p>
 <ul>

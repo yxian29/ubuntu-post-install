@@ -1,2 +1,2 @@
 bbd61720487ee27c966bf6e1759930d04c236d72  after-effects
-e3327efbccb6addd4af3a0192b5b6cba196d22d4  get-after-effects.sh
+05ddb59e6ac5ab80dc33328b8b63858ce781d7e4  get-after-effects.sh

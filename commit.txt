@@ -1,3 +1,3 @@
-SRC Commit ID  : b6f5f17
-SRC Message    : fix master redirects
+SRC Commit ID  : 2710200
+SRC Message    : fix writing commit SHA to file
 Built from     : master

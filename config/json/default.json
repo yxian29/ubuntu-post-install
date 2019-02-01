@@ -3,6 +3,7 @@
     "config": {
         "add_repo": {
             "docker": true,
+            "duo": true,
             "google": true,
             "googlecloud": true,
             "insync": true,

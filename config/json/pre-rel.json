@@ -3,11 +3,13 @@
     "config": {
         "add_repo": {
             "docker": true,
+            "duo": false,
             "google": true,
             "googlecloud": true,
             "insync": true,
             "kubernetes": true,
             "mendeley": false,
+            "ros": false,
             "signal": false,
             "skype": true,
             "spotify": true,
